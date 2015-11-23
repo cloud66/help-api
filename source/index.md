@@ -13,6 +13,7 @@ includes:
   - cloud_vendor_instances
   - stacks
   - deployments
+  - services
 
 search: true
 ---

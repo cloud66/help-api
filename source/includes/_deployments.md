@@ -194,7 +194,7 @@ services_filter | false | string | Services from your stack to deploy only. Dock
 > Headers
 
 ```http
-POST /stacks/{stack_id}/deployments/{id} HTTP/1.1
+DELETE /stacks/{stack_id}/deployments/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
