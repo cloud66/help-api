@@ -72,15 +72,13 @@ Content-Type: application/json
 
 Retrieves a paged list of all the stack objects the user can access.
 
-* **Scope:** _public_
+<aside class="notice">
+<b>Scope:</b> <i>public</i>
+</aside>
 
 ### HTTP Request
 
 `GET /stacks`
-
-<aside class="notice">
-List all stacks
-</aside>
 
 ### The stack object
 
@@ -154,15 +152,15 @@ Content-Type: application/json
 
 Retrieve the details of the stack specified in the request.
 
-* **Scope:** _public_
+<aside class="notice">
+<b>Scope:</b> <i>public</i>
+</aside>
 
 ### HTTP Request
 
 `GET /stacks/{id}`
 
-<aside class="notice">
-View a stack
-</aside>
+### Query parameters
 
 Parameter | Required | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
@@ -225,15 +223,15 @@ Content-Type: application/json
 
 Create and build a new docker stack. Either manifest definition, or cloud, region, size and buildtype must be passed as params.
 
-* **Scope:** _redeploy_
+<aside class="notice">
+<b>Scope:</b> <i>redeploy</i>
+</aside>
 
 ### HTTP Request
 
 `POST /stacks`
 
-<aside class="notice">
-Create a new stack
-</aside>
+### Query parameters
 
 Parameter | Required | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
@@ -293,15 +291,15 @@ Content-Type: application/json
 
 Retrieve a paged list of all asynchronous actions performed for the stack specified in the request.
 
-* **Scope:** _public_
+<aside class="notice">
+<b>Scope:</b> <i>public</i>
+</aside>
 
 ### HTTP Request
 
 `GET /stacks/{id}/actions`
 
-<aside class="notice">
-List all stack actions
-</aside>
+### Query parameters
 
 Parameter | Required | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
@@ -358,15 +356,15 @@ Content-Type: application/json
 
 Retrieve the details of an asynchronous action performed for the the stack specified in the request based on the supplied action ID.
 
-* **Scope:** _public_
+<aside class="notice">
+<b>Scope:</b> <i>public</i>
+</aside>
 
 ### HTTP Request
 
 `GET /stacks/{stack_id}/actions/{id}`
 
-<aside class="notice">
-View a stack action
-</aside>
+### Query parameters
 
 Parameter | Required | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
@@ -408,15 +406,15 @@ Content-Type: application/json
 
 Perform an asynchronous action for the stack specified in the request. You can use this method to restart the stack, clear the stack's cache, or enable maintenance mode.
 
-* **Scope:** _redeploy_
+<aside class="notice">
+<b>Scope:</b> <i>redeploy</i>
+</aside>
 
 ### HTTP Request
 
 `POST /stacks/{stack_id}/actions`
 
-<aside class="notice">
-Perform a stack action
-</aside>
+### Query parameters
 
 Parameter | Required | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------

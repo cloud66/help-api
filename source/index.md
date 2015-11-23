@@ -12,6 +12,7 @@ toc_footers:
 includes:
   - cloud_vendor_instances
   - stacks
+  - deployments
 
 search: true
 ---
