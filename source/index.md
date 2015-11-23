@@ -14,6 +14,7 @@ includes:
   - stacks
   - deployments
   - services
+  - containers
 
 search: true
 ---

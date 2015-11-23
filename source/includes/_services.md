@@ -179,7 +179,6 @@ server_group_count | false | string | A hash of server_group to count of contain
 
 ## Service stop
 
-
 > Headers
 
 ```http
