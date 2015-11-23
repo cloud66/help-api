@@ -9,6 +9,7 @@ Using the Stacks endpoint, you can submit requests using the following methods.
 
 * List all stacks
 * View a stack
+* Create a new stack
 * List all stack actions
 * View a stack action
 * Perform a stack action
@@ -77,6 +78,10 @@ Retrieves a paged list of all the stack objects the user can access.
 
 `GET /stacks`
 
+<aside class="notice">
+List all stacks
+</aside>
+
 ### The stack object
 
 | Property | Data type | Description | Sample value |
@@ -102,7 +107,7 @@ Retrieves a paged list of all the stack objects the user can access.
 | cloud_status | string | The current cloud provider status associated with the stack. | partial |
 | redeploy_hook | string | If applicable, the deploy hook URL associated with the stack. | http://hooks.cloud66.com/stacks/redeploy/ b806f1c3344eb3aa2a024b23254b75b3/ 6d677352a6b2eefec6e345ee2b491521 |
 
-## View a stack
+## Stack
 
 > Headers
 
@@ -155,11 +160,40 @@ Retrieve the details of the stack specified in the request.
 
 `GET /stacks/{id}`
 
+<aside class="notice">
+View a stack
+</aside>
+
 Parameter | Required | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
 id | true | string | Unique identifier of the stack | `5999b763474b0eafa5fafb64bff0ba80`
 
+### Stack status values
+
+| Status | Code | Description |
+| ----------- | :---: | ----------------------------------------- |
+| STK_QUEUED | 0 | Pending analysis |
+| STK_SUCCESS | 1 | Deployed successfully |
+| STK_FAILED | 2 | Deployment failed |
+| STK_ANALYSING | 3 | Analyzing |
+| STK_ANALYSED | 4 | Analyzed |
+| STK_QUEUED_FOR_DEPLOYING | 5 | Queued for deployment |
+| STK_DEPLOYING | 6 | Deploying |
+| STK_TERMINAL_FAILURE | 7 | Unable to analyze |
+
+### Stack health status values
+
+| Status | Code | Description |
+| ----------- | :---: | ------------------------------------------ |
+| HLT_UNKNOWN | 0 | Unknown |
+| HLT_BUILDING | 1 | Building |
+| HLT_PARTIAL | 2 | Impaired |
+| HLT_OK | 3 | Healthy |
+| HLT_BROKEN | 4 | Failed |
+
 ## Stack Create
+
+> Headers
 
 ```http
 POST /stacks HTTP/1.1
@@ -197,6 +231,10 @@ Create and build a new docker stack. Either manifest definition, or cloud, regio
 
 `POST /stacks`
 
+<aside class="notice">
+Create a new stack
+</aside>
+
 Parameter | Required | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
 name | true | string | New stack name | `new_stack_name`
@@ -206,6 +244,68 @@ manifest_yaml | false | string | The manifest definition of the new docker stack
 cloud | false | string | Cloud provider to create servers in | `aws`
 region | false | string | Region within the cloud to create servers in | `us-east-1`
 build_type | false | string | Deploy all services to "single" or "multi" servers | `multi`
+
+## Stack Action list
+
+> Headers
+
+```http
+GET /stacks/{id}/actions HTTP/1.1
+X-RateLimit-Limit: 3600
+X-RateLimit-Remaining: 3597
+```
+
+> Body
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "response":
+        [
+    {
+      "id":10,
+      "user":"test@cloud66.com",
+      "resource_type":"stack",
+      "action":"clear_caches",
+      "resource_id":"283",
+      "started_via":"api",
+      "started_at":
+      "2014-09-01T19:08:05Z",
+      "finished_at":"2014-09-01T19:08:09Z",
+      "finished_success":true,
+      "finished_message":null
+    }
+  ],
+  "count":1,
+  "pagination":
+    {
+      "previous":null,
+      "next":null,
+      "current":1,
+      "per_page":30,
+      "count":1,
+      "pages":1
+    }
+}
+```
+
+Retrieve a paged list of all asynchronous actions performed for the stack specified in the request.
+
+* **Scope:** _public_
+
+### HTTP Request
+
+`GET /stacks/{id}/actions`
+
+<aside class="notice">
+List all stack actions
+</aside>
+
+Parameter | Required | Data type | Description |  Sample value
+--------- | ------- | ------- |----------- |  -------
+id | true | string | Unique identifier of the stack | `5999b763474b0eafa5fafb64bff0ba80`
 
 ### The stack action object
 
@@ -222,25 +322,109 @@ build_type | false | string | Deploy all services to "single" or "multi" servers
 | finished_success | bool | Whether the action completed successfully. | true |
 | finished_message | string | If applicable, the system message associated with the completed action. | null |
 
-### Stack status values
+## Stack Action
 
-| Status | Code | Description |
-| ----------- | :---: | ----------------------------------------- |
-| STK_QUEUED | 0 | Pending analysis |
-| STK_SUCCESS | 1 | Deployed successfully |
-| STK_FAILED | 2 | Deployment failed |
-| STK_ANALYSING | 3 | Analyzing |
-| STK_ANALYSED | 4 | Analyzed |
-| STK_QUEUED_FOR_DEPLOYING | 5 | Queued for deployment |
-| STK_DEPLOYING | 6 | Deploying |
-| STK_TERMINAL_FAILURE | 7 | Unable to analyze |
+> Headers
 
-### Stack health status values
+```http
+GET /stacks/{stack_id}/actions/{id} HTTP/1.1
+X-RateLimit-Limit: 3600
+X-RateLimit-Remaining: 3597
+```
 
-| Status | Code | Description |
-| ----------- | :---: | ------------------------------------------ |
-| HLT_UNKNOWN | 0 | Unknown |
-| HLT_BUILDING | 1 | Building |
-| HLT_PARTIAL | 2 | Impaired |
-| HLT_OK | 3 | Healthy |
-| HLT_BROKEN | 4 | Failed |
+> Body
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "response":
+    {
+      "id":10,
+      "user":"test@cloud66.com",
+      "resource_type":"stack",
+      "action":"clear_caches",
+      "resource_id":"283",
+      "started_via":"api",
+      "started_at":
+      "2014-09-01T19:08:05Z",
+      "finished_at":"2014-09-01T19:08:09Z",
+      "finished_success":true,
+      "finished_message":null
+    }
+}
+```
+
+Retrieve the details of an asynchronous action performed for the the stack specified in the request based on the supplied action ID.
+
+* **Scope:** _public_
+
+### HTTP Request
+
+`GET /stacks/{stack_id}/actions/{id}`
+
+<aside class="notice">
+View a stack action
+</aside>
+
+Parameter | Required | Data type | Description |  Sample value
+--------- | ------- | ------- |----------- |  -------
+stack_id | true | string | Unique identifier of the stack | `5999b763474b0eafa5fafb64bff0ba80`
+id | true | integer | Identifier of the asynchronous action | `4153`
+
+## Run Stack action
+
+> Headers
+
+```http
+POST /stacks/{stack_id}/actions HTTP/1.1
+X-RateLimit-Limit: 3600
+X-RateLimit-Remaining: 3597
+```
+
+> Body
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "response":
+    {
+      "id":10,
+      "user":"test@cloud66.com",
+      "resource_type":"stack",
+      "action":"clear_caches",
+      "resource_id":"283",
+      "started_via":"api",
+      "started_at":"2014-09-01T19:08:05Z",
+      "finished_at":null,
+      "finished_success":null,
+      "finished_message":null
+    }
+}
+```
+
+Perform an asynchronous action for the stack specified in the request. You can use this method to restart the stack, clear the stack's cache, or enable maintenance mode.
+
+* **Scope:** _redeploy_
+
+### HTTP Request
+
+`POST /stacks/{stack_id}/actions`
+
+<aside class="notice">
+Perform a stack action
+</aside>
+
+Parameter | Required | Data type | Description |  Sample value
+--------- | ------- | ------- |----------- |  -------
+stack_id | true | string | Unique identifier of the stack | `5999b763474b0eafa5fafb64bff0ba80`
+command | true | string | The action to perform for the stack. Valid values are clear_caches, maintenance_mode, and restart. | `restart`
+
+| Command | Comments | Extra Parameters |
+| ---------- | ---------- | ---------------- |
+| maintenance_mode | Enable to Disable maintenance mode for a stack. | value=1 for enable, value=0 for disable |
+| clear_caches | Clear git caches for the stack | None |
+| restart | Restarts all stack components (nginx, db, etc.) | None |

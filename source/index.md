@@ -6,7 +6,7 @@ language_tabs:
   - ruby: Ruby
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='https://app.cloud66.com/api/3'> https://app.cloud66.com/api/3</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
