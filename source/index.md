@@ -24,6 +24,8 @@ includes:
   - server_settings
   - clouds
   - backups
+  - accounts
+  - users
 
 search: true
 ---
