@@ -18,6 +18,7 @@ includes:
   - enviroment_variables
   - firewall_rules
   - notifications
+  - stack_settings
 
 search: true
 ---
