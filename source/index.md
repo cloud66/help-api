@@ -17,6 +17,7 @@ includes:
   - containers
   - enviroment_variables
   - firewall_rules
+  - notifications
 
 search: true
 ---
