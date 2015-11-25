@@ -1,4 +1,4 @@
-# Notifications
+# Stack settings
 
 ## Settings list
 

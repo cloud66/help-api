@@ -19,6 +19,9 @@ includes:
   - firewall_rules
   - notifications
   - stack_settings
+  - server_groups
+  - servers
+  - server_settings
 
 search: true
 ---
