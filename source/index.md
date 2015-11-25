@@ -16,6 +16,7 @@ includes:
   - services
   - containers
   - enviroment_variables
+  - firewall_rules
 
 search: true
 ---
