@@ -335,7 +335,7 @@ Stop the given container
 
 ### HTTP Request
 
-`DELETE /stacks/{stack_id}/services/{id}`
+`DELETE /stacks/{stack_id}/containers/{id}`
 
 ### Query parameters
 
