@@ -22,6 +22,7 @@ includes:
   - server_groups
   - servers
   - server_settings
+  - clouds
 
 search: true
 ---
