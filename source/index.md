@@ -23,6 +23,7 @@ includes:
   - servers
   - server_settings
   - clouds
+  - backups
 
 search: true
 ---
