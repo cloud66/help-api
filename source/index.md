@@ -95,29 +95,20 @@ A user’s scope defines the limits of the actions the user can perform with the
 
 For the web flow, requested scopes be displayed to the user on the authorize form.
 
-**(no scope)**
-Users with this scope have public read-only access and can view limited stack information.
+| Scope | Description |
+| ----------- | ---------------------------- |
+| **(no scope)** | Users with this scope have public read-only access and can view limited stack information. |
+| **public** | Users with this scope have public read-only access and can view limited stack information. |
+| **redeploy** | Users with this scope can redeploy any stacks they can access. |
+| **jobs** | Users with this scope can view the scheduled jobs for the stacks they can access. |
+| **users** | Users with this scope can manage other users’ mobile devices. |
+| **admin** | Users with this scope can set and manage settings for the servers they can access. |
 
-**public**
-Users with this scope have public read-only access and can view limited stack information.
+<aside class="notice">
+<i>Your application can request scopes in the initial redirection. You can specify multiple scopes by separating them with a space character:</i>
+</aside>
 
-**redeploy**
-Users with this scope can redeploy any stacks they can access.
-
-**jobs**
-Users with this scope can view the scheduled jobs for the stacks they can access.
-
-**users**
-Users with this scope can manage other users’ mobile devices.
-
-**admin**
-Users with this scope can set and manage settings for the servers they can access.
-
-_NOTE: Your application can request scopes in the initial redirection. You can specify multiple scopes by separating them with a space character._
-
-`
-https://app.cloud66.com/oauth/authorize?client_id=...&scope=public+redeploy
-`
+`https://app.cloud66.com/oauth/authorize?client_id=...&scope=public+redeploy`
 
 ## Example
 
