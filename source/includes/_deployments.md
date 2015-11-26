@@ -70,9 +70,9 @@ Get list of all deployments of a stack
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 
 ## Deployment
 
@@ -133,10 +133,10 @@ Get information of a single deployment
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-id | true | integer | The deployment id | `107`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+id | **required** | integer | The deployment ID | `107`
 
 ## Redeploy
 
@@ -171,11 +171,11 @@ Redeploy a stack
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-git_ref | false | string | Git reference (branch, tag or hash). Non-docker only. | `a_git_tag_or_hash`
-services_filter | false | string | Services from your stack to deploy only. Docker only. | `service1,service2`
+id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+git_ref | optional | string | Git reference (branch, tag or hash). Non-docker only. | `a_git_tag_or_hash`
+services_filter | optional | string | Services from your stack to deploy only. Docker only. | `service1,service2`
 
 ## Cancel deployment
 
@@ -210,7 +210,7 @@ Cancel a live stack deployment
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-id | true | integer | The deployment id | `112`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+id | **required** | integer | The deployment ID | `112`

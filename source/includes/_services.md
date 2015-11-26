@@ -61,10 +61,10 @@ Get a list of all services of the stack
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-server_uid | false | string | Server UID | `1239b763474b0eafa5fafb64bff0ba80`
+id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+server_uid | optional | string | Server UID | `1239b763474b0eafa5fafb64bff0ba80`
 
 ## Service show
 
@@ -112,11 +112,11 @@ Get information of a service of the stack
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-id | true | string | The service name | `web`
-server_uid | false | string | Server UID | `1239b763474b0eafa5fafb64bff0ba80`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+id | **required** | string | The service name | `web`
+server_uid | optional | string | Server UID | `1239b763474b0eafa5fafb64bff0ba80`
 
 ## Service scale
 
@@ -158,12 +158,12 @@ Scale the given service over the stack
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-service_name | true | string | The service name | `web`
-server_count | false | string | A hash of server uid to count of containers desired on that server | `{"123123cfcb7d3d2b54614b19e2a6c673":2}`
-server_group_count | false | string | A hash of server_group to count of containers across the servers of that group | `{"web":4}`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+service_name | **required** | string | The service name | `web`
+server_count | optional | string | A hash of server uid to count of containers desired on that server | `{"123123cfcb7d3d2b54614b19e2a6c673":2}`
+server_group_count | optional | string | A hash of server_group to count of containers across the servers of that group | `{"web":4}`
 
 ## Service stop
 
@@ -193,7 +193,7 @@ Content-Type: application/json
 }
 ```
 
-Stop all of the given service on the stack (across all servers, unless server_uid supplied)
+Stop all of the given service on the stack (across all servers, unless `server_uid` is supplied)
 
 <aside class="notice">
 <b>Scope:</b> <i>admin</i>
@@ -205,8 +205,8 @@ Stop all of the given service on the stack (across all servers, unless server_ui
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-id | true | string | The service name | `web`
-server_uid | false | string | Server UID | `1239b763474b0eafa5fafb64bff0ba80`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+id | **required** | string | The service name | `web`
+server_uid | optional | string | Server UID | `1239b763474b0eafa5fafb64bff0ba80`

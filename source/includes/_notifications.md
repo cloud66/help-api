@@ -70,10 +70,10 @@ Get list of all environment variables of stack
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-alert_type | false | string | Type of alert | `server.stopped`
+id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+alert_type | optional | string | Type of alert | `server.stopped`
 
 ## Notification
 
@@ -115,10 +115,10 @@ Get information of a single notification
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-id | true | integer | The notification id | `4153`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+id | **required** | integer | The notification ID | `4153`
 
 ## Update Notification
 
@@ -133,7 +133,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 ```
 
-Update channel/params of a notification
+Update `channels` or `params` of a notification
 
 <aside class="notice">
 <b>Scope:</b> <i>public</i>
@@ -145,9 +145,9 @@ Update channel/params of a notification
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-id | true | integer | The notification id | `4153`
-channels | false | string | Notification channels (valid channels are: email, ios, hipchat, webhook, slack) | `[email,ios]`
-params | false | string | Notification channel parameters (as JSON string with valid keys: hipchat_token, hipchat_room, slack_url, slack_channel, webhook_url) | `{'hipchat_room' : 'test'}`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+id | **required** | integer | The notification ID | `4153`
+channels | optional | string | Notification channels (valid channels are: `email`, `ios`, `hipchat`, `webhook`, `slack`) | `[email,ios]`
+params | optional | string | Notification channel parameters (as JSON string with valid keys: `hipchat_token`, `hipchat_room`, `slack_url`, `slack_channel`, `webhook_url`) | `{'hipchat_room' : 'test'}`

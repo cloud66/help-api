@@ -169,9 +169,9 @@ Get detailed information about a user.
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-id | true | integer | The user UID | `1`
+id | **required** | integer | The user UID | `1`
 
 ## Add Device
 
@@ -212,12 +212,12 @@ Add a new device for the user.
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-id | true | integer | The user UID | `1`
-device_type | true | integer | Device type (1 = IOS, 2 = Android) | `1`
-sub_type | true | integer | Device subtype (1 = IPHONE, 2 = IPAD, 3 = IPOD) | `1`
-token | true | string | The token of the device | `htyukjbnnmshthkr`
+id | **required** | integer | The user UID | `1`
+device_type | **required** | integer | Device type (`1` = iOS, `2` = Android) | `1`
+sub_type | **required** | integer | Device subtype (`1` = iPhone, `2` = iPad, `3` = iPod) | `1`
+token | **required** | string | The token of the device | `htyukjbnnmshthkr`
 
 ## Update Device
 
@@ -244,12 +244,12 @@ Update device_type/sub_type of a device
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-id | true | integer | The user UID | `1`
-device_type | true | integer | Device type (1 = IOS, 2 = Android) | `1`
-sub_type | true | integer | Device subtype (1 = IPHONE, 2 = IPAD, 3 = IPOD) | `1`
-token | true | string | The token of the device | `htyukjbnnmshthkr`
+id | **required** | integer | The user UID | `1`
+device_type | **required** | integer | Device type (`1` = iOS, `2` = Android) | `1`
+sub_type | **required** | integer | Device subtype (`1` = iPhone, `2` = iPad, `3` = iPod) | `1`
+token | **required** | string | The token of the device | `htyukjbnnmshthkr`
 
 ## Delete Device
 
@@ -276,7 +276,7 @@ Delete a device
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-id | true | integer | The user UID | `1`
-token | true | string | The token of the device | `htyukjbnnmshthkr`
+id | **required** | integer | The user UID | `1`
+token | **required** | string | The token of the device | `htyukjbnnmshthkr`

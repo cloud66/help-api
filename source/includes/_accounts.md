@@ -82,6 +82,6 @@ Get information about an account.
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-id | true | integer | The account ID | `1`
+id | **required** | integer | The account ID | `1`

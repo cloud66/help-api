@@ -76,11 +76,11 @@ Get list of all backups of stack.
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-group | false | integer | Backup group ID | `15`
-db_type | false | string | Backup database type (valid options are: mysql, postgresql, redis, mongodb) | `mysql`
+id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+group | optional | integer | Backup group ID | `15`
+db_type | optional | string | Backup database type (valid options are: mysql, postgresql, redis, mongodb) | `mysql`
 
 ## Backup
 
@@ -130,10 +130,10 @@ Get information about a single backup.
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-id | true | integer | Backup id | `4153`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+id | **required** | integer | Backup ID | `4153`
 
 ## New Backup
 
@@ -168,15 +168,15 @@ Create a new backup task.
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-db_type | false | string | Comma separated list of Database types which need backup tasks (valid options: all,mysql, postgresql, redis, mongodb) | `mysql,redis`
-frequency | false | string | Frequency of backup task in cron schedule format | `0 */1 * * *`
-keep_count | false | integer | Number of previous backups to keep | `10`
-gzip | false | boolean | Compress your backups with gzip. | `false`
-excluded_tables | false | string | Tables that must be excluded from the backup | `my_log_table`
-run_on_replica_server | false | boolean | Run backup task on replica server if available | `false`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+db_type | optional | string | Comma separated list of Database types which need backup tasks (valid options: `all`, `mysql`, `postgresql`, `redis`, `mongodb`) | `mysql,redis`
+frequency | optional | string | Frequency of backup task in cron schedule format | `0 */1 * * *`
+keep_count | optional | integer | Number of previous backups to keep | `10`
+gzip | optional | boolean | Compress your backups with gzip. | `false`
+excluded_tables | optional | string | Tables that must be excluded from the backup | `my_log_table`
+run_on_replica_server | optional | boolean | Run backup task on replica server if available | `false`
 
 ## Import Backup
 
@@ -211,12 +211,12 @@ Import an external backup.
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-group | true | integer | The group id of backups that imported backup must restored in | `5`
-db_type | true | string | Comma separated list of Database types which need backup tasks (valid options: mysql, postgresql, redis, mongodb) | `mysql`
-remote_url | true | string | A URL to backup file to be imported | `https://s3.amazonaws.com/c66-managed-backup-non-prod/2aad2bb5a70e621ecf251fbd85af6927/backups/09a7dec0efdaa19b44148fccbf6128ec/redis/redis_23/2014.07.01.07.00.46/redis_23.tar`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+group | **required** | integer | The group ID of backups that imported backup must restored in | `5`
+db_type | **required** | string | Comma separated list of Database types which need backup tasks (valid options: `mysql`, `postgresql`, `redis`, `mongodb`) | `mysql`
+remote_url | **required** | string | A URL to backup file to be imported | `https://s3.amazonaws.com/c66-managed-backup-non-prod/2aad2bb5a70e621ecf251fbd85af6927/backups/09a7dec0efdaa19b44148fccbf6128ec/redis/redis_23/2014.07.01.07.00.46/redis_23.tar`
 
 ## Backups files list
 
@@ -261,10 +261,10 @@ Get list of all backup files of a stack.
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-backup_id | true | integer | Backup ID | `4153`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+backup_id | **required** | integer | Backup ID | `4153`
 
 ## Backup file
 
@@ -299,8 +299,8 @@ Get the public URL to a backup file.
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-backup_id | true | integer | Backup ID | `4153`
-id | true | string | The file ID | `tar-aa`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+backup_id | **required** | integer | Backup ID | `4153`
+id | **required** | string | The file ID | `tar-aa`

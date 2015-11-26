@@ -85,9 +85,9 @@ Get list of all servers of stack
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 
 ## Servers
 
@@ -163,8 +163,8 @@ Get information of a single server
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-id | true | string | The server id | `f8468fc145ea49bac474b30a8fea888d`
-include_private_key | false | integer | if set to 1 then private_key will included in response | `1`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+id | **required** | string | The server ID | `f8468fc145ea49bac474b30a8fea888d`
+include_private_key | optional | integer | if set to `1` then private_key will included in response | `1`

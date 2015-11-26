@@ -60,9 +60,9 @@ You can generate an OAuth token using the Your Account > [Apps](https://app.clou
 
 | Parameter | Description | Presence |
 | ----------- | ---------------------------- | --------- |
-| client_id | The client ID you received from Cloud 66 when you registered. | Required |
-| redirect_url | URL in your app where users will be sent after authorization. | Required |
-| scope | Comma separated list of scopes. | Optional |
+| client_id | The client ID you received from Cloud 66 when you registered. | **required** |
+| redirect_url | URL in your app where users will be sent after authorization. | **required** |
+| scope | Comma separated list of scopes. | optional |
 
 **Step 2 - Cloud 66 redirects back to your site**
 
@@ -74,9 +74,9 @@ Exchange this for an access token:
 
 | Parameter | Description | Presence |
 | ----------- | ---------------------------- | --------- |
-| client_id | The client ID you received from Cloud 66 when you registered. | Required |
-| redirect_url | URL in your app where users will be sent after authorization. | Optional |
-| client_secret | The client secret you received from Cloud 66 when you registered. | Required |
+| client_id | The client ID you received from Cloud 66 when you registered. | **required** |
+| redirect_url | URL in your app where users will be sent after authorization. | optional |
+| client_secret | The client secret you received from Cloud 66 when you registered. | **required** |
 
 **Response**
 By default, the response will take the following form:

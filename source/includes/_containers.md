@@ -68,10 +68,10 @@ Get a list of all the containers of the stack
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-server_uid | false | string | Server UID | `c6014897b8c8e9f2fc204a3a9efdae05`
+id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+server_uid | optional | string | Server UID | `c6014897b8c8e9f2fc204a3a9efdae05`
 
 ## Container show
 
@@ -282,10 +282,10 @@ Get information of a container of the stack (includes container runtime informat
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-id | true | string | The container UID | `cba44fa6b6acf57fb0ef6c2ce385f6a129867df544dae7181d2410e9f9cc32bc`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+id | **required** | string | The container UID | `cba44fa6b6acf57fb0ef6c2ce385f6a129867df544dae7181d2410e9f9cc32bc`
 
 ## Container stop
 
@@ -327,7 +327,7 @@ Stop the given container
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-id | true | string | The container UID | `cba44fa6b6acf57fb0ef6c2ce385f6a129867df544dae7181d2410e9f9cc32bc`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+id | **required** | string | The container UID | `cba44fa6b6acf57fb0ef6c2ce385f6a129867df544dae7181d2410e9f9cc32bc`

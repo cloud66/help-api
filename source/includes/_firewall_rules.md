@@ -71,9 +71,9 @@ Get list of all firewall rules of stack
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 
 ## Firewall rule
 
@@ -119,10 +119,10 @@ Get information of a single firewall rule
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-id | true | integer | The firewall rule id | `4153`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+id | **required** | integer | The firewall rule ID | `4153`
 
 ## Add Firewall rule
 
@@ -138,7 +138,7 @@ Content-Type: application/json
 ```
 
 One of the from/to params must be specified.
-If you specify ttl , from_ip can be set as 'AUTO', then caller IP will be set as from_ip
+If you specify `ttl` , `from_ip` can be set as `AUTO`, then caller IP will be set as `from_ip`
 
 <aside class="notice">
 <b>Scope:</b> <i>admin</i>
@@ -150,15 +150,15 @@ If you specify ttl , from_ip can be set as 'AUTO', then caller IP will be set as
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-ttl | false | integer | Time that firewall rule will be expires in | `20`
-from_ip | false | string | From IP value of rule | `123.123.123.123`
-from_group_id | false | integer | You can specify a server group id as From | `19`
-from_server_id | false | integer | You can specify a server id as From | `193`
-to_ip | false | string | To IP value of rule | `123.123.123.123`
-to_group_id | false | integer | You can specify a server group id as To | `19`
-to_server_id | false | integer | You can specify a server id as To | `1`
-protocol | true | integer | Protocol of firewall rule . TCP = 1 , UDP = 2 , ICMP = 3 | `1`
-port | true | integer | Port of firewall rule | `80`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+ttl | optional | integer | Time that firewall rule will be expires in | `20`
+from_ip | optional | string | From IP value of rule | `123.123.123.123`
+from_group_id | optional | integer | You can specify a server group ID as From | `19`
+from_server_id | optional | integer | You can specify a server ID as From | `193`
+to_ip | optional | string | To IP value of rule | `123.123.123.123`
+to_group_id | optional | integer | You can specify a server group ID as To | `19`
+to_server_id | optional | integer | You can specify a server ID as To | `1`
+protocol | **required** | integer | Protocol of firewall rule . `1`=TCP , `2`=UDP , `3`=ICMP | `1`
+port | **required** | integer | Port of firewall rule | `80`

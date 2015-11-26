@@ -45,10 +45,10 @@ Get list of all settings of a server
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-server_id | true | string | The server UID | `f8468fc145ea49bac474b30a8fea888d`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+server_id | **required** | string | The server UID | `f8468fc145ea49bac474b30a8fea888d`
 
 ## Server Setting
 
@@ -83,11 +83,11 @@ Get information of a single server setting item
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-server_id | true | string | The server uid | `f8468fc145ea49bac474b30a8fea888d`
-id | true | string | The server setting item id | `server-name`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+server_id | **required** | string | The server uid | `f8468fc145ea49bac474b30a8fea888d`
+id | **required** | string | The server setting item ID | `server-name`
 
 ## Update Server Setting
 
@@ -130,9 +130,9 @@ Update value of a server setting item
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-stack_id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-server_id | true | string | The server UID | `f8468fc145ea49bac474b30a8fea888d`
-id | true | string | The server setting item id | `server-name`
-value | true | string | The server setting item new value | `newname`
+stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
+server_id | **required** | string | The server UID | `f8468fc145ea49bac474b30a8fea888d`
+id | **required** | string | The server setting item ID | `server-name`
+value | **required** | string | The server setting item new value | `newname`

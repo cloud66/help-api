@@ -436,6 +436,6 @@ Get information about a single cloud of an account
 
 ### Query parameters
 
-Parameter | Required | Data type | Description |  Sample value
+Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
-cloud_id | true | string | The cloud id (name) | `digitalocean`
+cloud_id | **required** | string | The cloud ID (name) | `digitalocean`
