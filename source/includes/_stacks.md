@@ -1,6 +1,6 @@
 # Stacks
 <aside class="notice">
-Most interactions with the Cloud 66 API are performed at the stack level. Using the Stacks resource, you can list stacks and view stack details, but you can only create, update, or delete stacks using the UI dashboard.
+Most interactions with the Cloud 66 API are performed at the stack level. Using the Stacks resource, you can list stacks and view stack details, but you can only create, update, or delete stacks using the UI dashboard. However, new Docker-only stacks can also be created using API.
 </aside>
 
 ### Methods
@@ -9,7 +9,7 @@ Using the Stacks endpoint, you can submit requests using the following methods.
 
 * List all stacks
 * View a stack
-* Create a new stack
+* Create a new stack (Docker only)
 * List all stack actions
 * View a stack action
 * Perform a stack action

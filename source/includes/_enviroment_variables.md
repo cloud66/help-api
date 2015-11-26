@@ -130,8 +130,7 @@ Get information of a single environment variable
 Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
 stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-key | **required** | string | The new environment variable key | `MY_ENVIRONMENT_VALUE`
-value | **required** | string | The new environment variable new value | `SOME_VALUE`
+id | **required** | integer | The new environment variable ID | `MY_ENVIRONMENT_VALUE`
 
 ## Add Environment Variable
 

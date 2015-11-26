@@ -1,9 +1,5 @@
 # Services
 
-<aside class="notice">
-The Services API endpoints run against the Cloud 66 beta program, with Docker-based stacks.
-</aside>
-
 ## Services list
 
 ```http

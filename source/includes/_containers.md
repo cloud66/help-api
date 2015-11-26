@@ -1,9 +1,5 @@
 # Containers
 
-<aside class="notice">
-The containers API endpoints are currently only available to <a href='http://go.c66.me/c66beta'>beta program members</a> with Docker-based stacks.
-</aside>
-
 ## Containers list
 
 ```http
