@@ -2,15 +2,11 @@
 
 ## Server Groups list
 
-> Headers
-
 ```http
 GET /stacks/{id}/server_groups HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -65,15 +61,11 @@ id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 
 ## Server Group
 
-> Headers
-
 ```http
 GET /stacks/{stack_id}/server_groups/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK

@@ -2,15 +2,11 @@
 
 ## Cloud list
 
-> Headers
-
 ```http
 GET /clouds HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -324,15 +320,11 @@ Get list of all clouds of account
 
 ## Cloud
 
-> Headers
-
 ```http
 GET /clouds/{cloud_id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK

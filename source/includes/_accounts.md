@@ -2,15 +2,11 @@
 
 ## Accounts list
 
-> Headers
-
 ```http
 GET /accounts HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -19,7 +15,7 @@ Content-Type: application/json
 {
   "response": [
     {
-            "id": 139,
+      "id": 139,
       "owner": "test@cloud66.com",
       "created_at_iso": "2013-06-19T11:08:03Z",
       "updated_at_iso": "2014-02-20T12:55:58Z",
@@ -51,15 +47,11 @@ Get a list of accounts that caller belongs to.
 
 ## Account
 
-> Headers
-
 ```http
 GET /accounts/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -68,7 +60,7 @@ Content-Type: application/json
 {
   "response":
     {
-                "id": 139,
+          "id": 139,
           "owner": "test@cloud66.com",
           "created_at_iso": "2013-06-19T11:08:03Z",
           "updated_at_iso": "2014-02-20T12:55:58Z",

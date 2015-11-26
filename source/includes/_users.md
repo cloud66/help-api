@@ -2,15 +2,11 @@
 
 ## Users list
 
-> Headers
-
 ```http
 GET /users HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -99,15 +95,11 @@ Get list of users that caller has access to.
 
 ## User
 
-> Headers
-
 ```http
 GET /users/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -183,15 +175,11 @@ id | true | integer | The user UID | `1`
 
 ## Add Device
 
-> Headers
-
 ```http
 POST /users/{id}/devices HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -233,15 +221,11 @@ token | true | string | The token of the device | `htyukjbnnmshthkr`
 
 ## Update Device
 
-> Headers
-
 ```http
 PUT /users/{id}/devices HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -269,15 +253,11 @@ token | true | string | The token of the device | `htyukjbnnmshthkr`
 
 ## Delete Device
 
-> Headers
-
 ```http
 DELETE /stacks/{stack_id}/environments/{key} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK

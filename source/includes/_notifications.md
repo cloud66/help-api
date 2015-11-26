@@ -2,15 +2,11 @@
 
 ## Notifications list
 
-> Headers
-
 ```http
 GET /stacks/{id}/notifications HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -81,15 +77,11 @@ alert_type | false | string | Type of alert | `server.stopped`
 
 ## Notification
 
-> Headers
-
 ```http
 GET /stacks/{stack_id}/notifications/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -130,15 +122,11 @@ id | true | integer | The notification id | `4153`
 
 ## Update Notification
 
-> Headers
-
 ```http
 PUT /stacks/{stack_id}/notifications/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK

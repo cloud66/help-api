@@ -2,15 +2,11 @@
 
 ## Deployment list
 
-> Headers
-
 ```http
 GET /stacks/{id}/deployments HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -80,15 +76,11 @@ id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 
 ## Deployment
 
-> Headers
-
 ```http
 GET /stacks/{stack_id}/deployments/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -148,15 +140,11 @@ id | true | integer | The deployment id | `107`
 
 ## Redeploy
 
-> Headers
-
 ```http
 GET /stacks/{stack_id}/deployments HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -191,15 +179,11 @@ services_filter | false | string | Services from your stack to deploy only. Dock
 
 ## Cancel deployment
 
-> Headers
-
 ```http
 DELETE /stacks/{stack_id}/deployments/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK

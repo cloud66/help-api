@@ -6,15 +6,11 @@ The containers API endpoints are currently only available to <a href='http://go.
 
 ## Containers list
 
-> Headers
-
 ```http
 POST /stacks/{id}/containers HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -79,15 +75,11 @@ server_uid | false | string | Server UID | `c6014897b8c8e9f2fc204a3a9efdae05`
 
 ## Container show
 
-> Headers
-
 ```http
 GET /stacks/{stack_id}/containers/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -297,15 +289,11 @@ id | true | string | The container UID | `cba44fa6b6acf57fb0ef6c2ce385f6a129867d
 
 ## Container stop
 
-> Headers
-
 ```http
 DELETE /stacks/{stack_id}/containers/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK

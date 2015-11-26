@@ -17,15 +17,11 @@ Using the Stacks endpoint, you can submit requests using the following methods.
 
 ## Stack List
 
-> Headers
-
 ```http
 GET /stacks HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -107,15 +103,11 @@ Retrieves a paged list of all the stack objects the user can access.
 
 ## Stack
 
-> Headers
-
 ```http
 GET /stacks HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -191,15 +183,11 @@ id | true | string | Unique identifier of the stack | `5999b763474b0eafa5fafb64b
 
 ## Stack Create
 
-> Headers
-
 ```http
 POST /stacks HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -245,15 +233,11 @@ build_type | false | string | Deploy all services to "single" or "multi" servers
 
 ## Stack Action list
 
-> Headers
-
 ```http
 GET /stacks/{id}/actions HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -322,15 +306,11 @@ id | true | string | Unique identifier of the stack | `5999b763474b0eafa5fafb64b
 
 ## Stack Action
 
-> Headers
-
 ```http
 GET /stacks/{stack_id}/actions/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -373,15 +353,11 @@ id | true | integer | Identifier of the asynchronous action | `4153`
 
 ## Run Stack action
 
-> Headers
-
 ```http
 POST /stacks/{stack_id}/actions HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK

@@ -2,15 +2,11 @@
 
 ## Firewall rules list
 
-> Headers
-
 ```http
 GET /stacks/{id}/firewalls HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -81,15 +77,11 @@ id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 
 ## Firewall rule
 
-> Headers
-
 ```http
 GET /stacks/{stack_id}/firewalls/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -134,15 +126,11 @@ id | true | integer | The firewall rule id | `4153`
 
 ## Add Firewall rule
 
-> Headers
-
 ```http
 POST /stacks/{stack_id}/firewalls HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK

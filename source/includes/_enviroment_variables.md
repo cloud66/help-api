@@ -2,15 +2,11 @@
 
 ## Environment Variable list
 
-> Headers
-
 ```http
 GET /stacks/{id}/environments HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -92,15 +88,11 @@ id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 
 ## Environment Variable
 
-> Headers
-
 ```http
 GET /stacks/{stack_id}/environments/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -143,15 +135,11 @@ value | true | string | The new environment variable new value | `SOME_VALUE`
 
 ## Add Environment Variable
 
-> Headers
-
 ```http
 POST /stacks/{stack_id}/environments HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -194,15 +182,11 @@ value | true | string | The new environment variable new value | `SOME_VALUE`
 
 ## Update Environment Variable
 
-> Headers
-
 ```http
 PUT /stacks/{stack_id}/environments/{key} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -245,15 +229,11 @@ value | true | string | The environment variable new value | `127.0.0.1`
 
 ## Delete Environment Variable
 
-> Headers
-
 ```http
 DELETE /stacks/{stack_id}/environments/{key} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK

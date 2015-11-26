@@ -6,15 +6,11 @@ The Services API endpoints run against the Cloud 66 beta program, with Docker-ba
 
 ## Services list
 
-> Headers
-
 ```http
 POST /stacks/{id}/services HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -72,15 +68,11 @@ server_uid | false | string | Server UID | `1239b763474b0eafa5fafb64bff0ba80`
 
 ## Service show
 
-> Headers
-
 ```http
 GET /stacks/{stack_id}/services/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -128,15 +120,11 @@ server_uid | false | string | Server UID | `1239b763474b0eafa5fafb64bff0ba80`
 
 ## Service scale
 
-> Headers
-
 ```http
 POST /stacks/{stack_id}/services HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -179,15 +167,11 @@ server_group_count | false | string | A hash of server_group to count of contain
 
 ## Service stop
 
-> Headers
-
 ```http
 DELETE /stacks/{stack_id}/services/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK

@@ -2,15 +2,11 @@
 
 ## Backups list
 
-> Headers
-
 ```http
 GET /stacks/{id}/backups HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -88,15 +84,11 @@ db_type | false | string | Backup database type (valid options are: mysql, postg
 
 ## Backup
 
-> Headers
-
 ```http
 GET /stacks/{stack_id}/backups/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -145,15 +137,11 @@ id | true | integer | Backup id | `4153`
 
 ## New Backup
 
-> Headers
-
 ```http
 POST /stacks/{stack_id}/backups HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -192,15 +180,11 @@ run_on_replica_server | false | boolean | Run backup task on replica server if a
 
 ## Import Backup
 
-> Headers
-
 ```http
 POST /stacks/{stack_id}/backups HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -236,15 +220,11 @@ remote_url | true | string | A URL to backup file to be imported | `https://s3.a
 
 ## Backups files list
 
-> Headers
-
 ```http
 GET /stacks/{stack_id}/backups/{backup_id}/files HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -288,15 +268,11 @@ backup_id | true | integer | Backup ID | `4153`
 
 ## Backup file
 
-> Headers
-
 ```http
 GET /stacks/{stack_id}/backups/{backup_id}/files/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK

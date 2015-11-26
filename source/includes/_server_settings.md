@@ -2,15 +2,11 @@
 
 ## Server Settings list
 
-> Headers
-
 ```http
 GET /stacks/{stack_id}/servers/{server_id}/settings HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -56,15 +52,11 @@ server_id | true | string | The server UID | `f8468fc145ea49bac474b30a8fea888d`
 
 ## Server Setting
 
-> Headers
-
 ```http
 GET stacks/{stack_id}/servers/{server_id}/settings/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -99,15 +91,11 @@ id | true | string | The server setting item id | `server-name`
 
 ## Update Server Setting
 
-> Headers
-
 ```http
 PUT /stacks/{stack_id}/servers/{server_id}/settings/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK

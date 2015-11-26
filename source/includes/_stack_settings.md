@@ -2,15 +2,11 @@
 
 ## Settings list
 
-> Headers
-
 ```http
 GET /stacks/{id}/settings HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -93,15 +89,11 @@ id | true | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 
 ## Setting
 
-> Headers
-
 ```http
 GET /stacks/{stack_id}/settings/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
@@ -135,15 +127,11 @@ id | true | string | The setting item id | `git-branch`
 
 ## Update Setting
 
-> Headers
-
 ```http
 PUT /stacks/{stack_id}/notifications/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
-
-> Body
 
 ```http
 HTTP/1.1 200 OK
