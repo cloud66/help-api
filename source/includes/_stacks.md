@@ -104,7 +104,7 @@ Retrieves a paged list of all the stack objects the user can access.
 ## Stack
 
 ```http
-GET /stacks HTTP/1.1
+GET /stacks/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
@@ -229,6 +229,7 @@ service_yaml | **required** | string | The services definition of the new docker
 manifest_yaml | optional | string | The manifest definition of the new docker stack | `manifest_yaml_serialised`
 cloud | optional | string | Cloud provider to create servers in | `aws`
 region | optional | string | Region within the cloud to create servers in | `us-east-1`
+size | optional | string | Size of the server | `t1.micro`
 build_type | optional | string | Deploy all services to `single` or `multi` servers | `multi`
 
 ## Stack Action list
@@ -399,6 +400,6 @@ command | **required** | string | The action to perform for the stack. Valid val
 
 | Command | Comments | Extra Parameters |
 | ---------- | ---------- | ---------------- |
-| maintenance_mode | Enable to Disable maintenance mode for a stack. | `1` for enable, `0` for disable |
+| maintenance_mode | Enable to Disable maintenance mode for a stack. | `value`=`1` for enable, `value`=`0` for disable |
 | clear_caches | Clear git caches for the stack | None |
 | restart | Restarts all stack components (nginx, db, etc.) | None |
