@@ -15,6 +15,7 @@ includes:
   - deployments
   - services
   - containers
+  - image_repositories
   - enviroment_variables
   - firewall_rules
   - notifications
