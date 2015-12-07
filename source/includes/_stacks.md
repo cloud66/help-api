@@ -17,6 +17,12 @@ Using the Stacks endpoint, you can submit requests using the following methods.
 
 ## Stack List
 
+```ruby
+response = token.get("#{api_url}/stacks.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /stacks HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -103,6 +109,13 @@ Retrieves a paged list of all the stack objects the user can access.
 
 ## Stack
 
+```ruby
+id = 'a6b583684833a2cf4845079c9d9350a8'
+response = token.get("#{api_url}/stacks/{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /stacks/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -183,6 +196,19 @@ id | **required** | string | Unique identifier of the stack | `5999b763474b0eafa
 
 ## Stack Create
 
+```ruby
+service_file = File.read('path/to/service.yml')
+manifest_file = File.read('path/to/manifest.yml')
+
+#Using manifest.yml
+response = token.post("#{api_url}/stacks.json", {body: {:name => 'new_stack_name', :environment => 'production', :service_yaml => service_file, :manifest_yaml => manifest_file}})
+
+#Using separate parameters
+response = token.post("#{api_url}/stacks.json", {body: {:name => 'new_stack_name', :environment => 'production', :service_yaml => service_file, :cloud => 'digitalocean', :region => 'ams1', :size => '1gb', :build_type => 'single'}})
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 POST /stacks HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -228,11 +254,19 @@ environment | **required** | string | New stack environment | `production`
 service_yaml | **required** | string | The services definition of the new docker stack | `service_yaml_serialised`
 manifest_yaml | optional | string | The manifest definition of the new docker stack | `manifest_yaml_serialised`
 cloud | optional | string | Cloud provider to create servers in | `aws`
+key_name | optional | string | Name of the cloud provider key (`Default` or first available key for the cloud if not specified) | `my_key`
 region | optional | string | Region within the cloud to create servers in | `us-east-1`
 size | optional | string | Size of the server | `t1.micro`
 build_type | optional | string | Deploy all services to `single` or `multi` servers | `multi`
 
 ## Stack Action list
+
+```ruby
+id = 'a6b583684833a2cf4845079c9d9350a8'
+response = token.get("#{api_url}/stacks/#{id}/actions.json")
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 GET /stacks/{id}/actions HTTP/1.1
@@ -307,6 +341,14 @@ id | **required** | string | Unique identifier of the stack | `5999b763474b0eafa
 
 ## Stack Action
 
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+id = '202161'
+response = token.get("#{api_url}/stacks/#{stack_id}/actions/#{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /stacks/{stack_id}/actions/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -353,6 +395,13 @@ stack_id | **required** | string | Unique identifier of the stack | `5999b763474
 id | **required** | integer | Identifier of the asynchronous action | `4153`
 
 ## Run Stack action
+
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+response = token.post("#{api_url}/stacks/#{stack_id}/actions.json", {body: {:command => 'clear_caches'}})
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 POST /stacks/{stack_id}/actions HTTP/1.1
