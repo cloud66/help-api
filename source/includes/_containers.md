@@ -2,8 +2,15 @@
 
 ## Containers list
 
+```ruby
+id = 'a6b583684833a2cf4845079c9d9350a8'
+response = token.get("#{api_url}/stacks/#{id}/containers.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
-POST /stacks/{id}/containers HTTP/1.1
+GET /stacks/{id}/containers HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
@@ -70,6 +77,14 @@ id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 server_uid | optional | string | Server UID | `c6014897b8c8e9f2fc204a3a9efdae05`
 
 ## Container show
+
+```ruby
+stack_id = 'ec28beaa0e324c21ab2f9c5a153189a2'
+id = 'cba44fa6b6acf57fb0ef6c2ce385f6a129867df544dae7181d2410e9f9cc32bc'
+response = token.get("#{api_url}/stacks/#{stack_id}/containers/#{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 GET /stacks/{stack_id}/containers/{id} HTTP/1.1
@@ -284,6 +299,14 @@ stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0
 id | **required** | string | The container UID | `cba44fa6b6acf57fb0ef6c2ce385f6a129867df544dae7181d2410e9f9cc32bc`
 
 ## Container stop
+
+```ruby
+stack_id = 'ec28beaa0e324c21ab2f9c5a153189a2'
+id = 'cba44fa6b6acf57fb0ef6c2ce385f6a129867df544dae7181d2410e9f9cc32bc'
+response = token.delete("#{api_url}/stacks/#{stack_id}/containers/#{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 DELETE /stacks/{stack_id}/containers/{id} HTTP/1.1

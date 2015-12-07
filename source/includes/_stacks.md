@@ -111,7 +111,7 @@ Retrieves a paged list of all the stack objects the user can access.
 
 ```ruby
 id = 'a6b583684833a2cf4845079c9d9350a8'
-response = token.get("#{api_url}/stacks/{id}.json")
+response = token.get("#{api_url}/stacks/#{id}.json")
 
 puts JSON.parse(response.body)['response']
 ```

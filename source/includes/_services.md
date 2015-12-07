@@ -2,8 +2,15 @@
 
 ## Services list
 
+```ruby
+id = 'a6b583684833a2cf4845079c9d9350a8'
+response = token.get("#{api_url}/stacks/#{id}/services.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
-POST /stacks/{id}/services HTTP/1.1
+GET /stacks/{id}/services HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
@@ -64,6 +71,14 @@ server_uid | optional | string | Server UID | `1239b763474b0eafa5fafb64bff0ba80`
 
 ## Service show
 
+```ruby
+stack_id = 'ec28beaa0e324c21ab2f9c5a153189a2'
+id = 'web'
+response = token.get("#{api_url}/stacks/#{stack_id}/services/#{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /stacks/{stack_id}/services/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -116,6 +131,14 @@ server_uid | optional | string | Server UID | `1239b763474b0eafa5fafb64bff0ba80`
 
 ## Service scale
 
+```ruby
+stack_id = 'ec28beaa0e324c21ab2f9c5a153189a2'
+id = 'web'
+response = token.post("#{api_url}/stacks/#{stack_id}/services.json", {body: {:service_name => id}})
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 POST /stacks/{stack_id}/services HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -162,6 +185,14 @@ server_count | optional | string | A hash of server uid to count of containers d
 server_group_count | optional | string | A hash of server_group to count of containers across the servers of that group | `{"web":4}`
 
 ## Service stop
+
+```ruby
+stack_id = 'ec28beaa0e324c21ab2f9c5a153189a2'
+id = 'web'
+response = token.delete("#{api_url}/stacks/#{stack_id}/services/#{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 DELETE /stacks/{stack_id}/services/{id} HTTP/1.1
