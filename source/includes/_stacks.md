@@ -449,6 +449,10 @@ command | **required** | string | The action to perform for the stack. Valid val
 
 | Command | Comments | Extra Parameters |
 | ---------- | ---------- | ---------------- |
-| maintenance_mode | Enable to Disable maintenance mode for a stack. | `value`=`1` for enable, `value`=`0` for disable |
+| maintenance_mode | Enable to Disable maintenance mode for a stack. | <ul><li>`value`:`1` for enable or `0` for disable</li></ul> |
 | clear_caches | Clear git caches for the stack | None |
 | restart | Restarts all stack components (nginx, db, etc.) | None |
+| promote_slave_db | Promote the specified slave database server to a standalone master | <ul><li>`server`:`server-name`</li><li>`server_group`: valid values `all`, `mysql`, `postgresql`, `redis`, `mongodb`</li></ul> |
+| resync_slave_db | Re-sync the specified slave database server with its master database server | <ul><li>`server`:`server-name`</li><li>`server_group`: valid values `all`, `mysql`, `postgresql`, `redis`, `mongodb`</li></ul> |
+| container_restart | Restarts a particular container on the given stack | <ul><li>`container`:`5999b763474b0eafa5fafb64bff0ba80`</li></ul> |
+| service_restart | Restarts all the containers from the given service | <ul><li>`service_name`:`web`</li><li>`server_id_filter`:`f8468fc145ea49bac474b30a8fea888d` (optional) </li></ul> |
