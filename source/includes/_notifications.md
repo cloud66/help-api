@@ -2,6 +2,13 @@
 
 ## Notifications list
 
+```ruby
+id = '5999b763474b0eafa5fafb64bff0ba80'
+response = token.get("#{api_url}/stacks/#{id}/notifications.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /stacks/{id}/notifications HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -77,6 +84,14 @@ alert_type | optional | string | Type of alert | `server.stopped`
 
 ## Notification
 
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+id = 1191
+response = token.get("#{api_url}/stacks/#{stack_id}/notifications/#{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /stacks/{stack_id}/notifications/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -118,9 +133,17 @@ Get information of a single notification
 Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
 stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-id | **required** | integer | The notification ID | `4153`
+id | **required** | integer | The notification ID | `1191`
 
 ## Update Notification
+
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+id = 1191
+response = token.put("#{api_url}/stacks/#{stack_id}/notifications/#{id}.json", {body: {:params => "{'hipchat_room' : 'test'}"}})
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 PUT /stacks/{stack_id}/notifications/{id} HTTP/1.1
@@ -148,6 +171,6 @@ Update `channels` or `params` of a notification
 Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
 stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-id | **required** | integer | The notification ID | `4153`
+id | **required** | integer | The notification ID | `1191`
 channels | optional | string | Notification channels (valid channels are: `email`, `ios`, `hipchat`, `webhook`, `slack`) | `[email,ios]`
 params | optional | string | Notification channel parameters (as JSON string with valid keys: `hipchat_token`, `hipchat_room`, `slack_url`, `slack_channel`, `webhook_url`) | `{'hipchat_room' : 'test'}`

@@ -2,6 +2,13 @@
 
 ## Firewall rules list
 
+```ruby
+id = '5999b763474b0eafa5fafb64bff0ba80'
+response = token.get("#{api_url}/stacks/#{id}/firewalls.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /stacks/{id}/firewalls HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -77,6 +84,14 @@ id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 
 ## Firewall rule
 
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+id = 4153
+response = token.get("#{api_url}/stacks/#{stack_id}/firewalls/#{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /stacks/{stack_id}/firewalls/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -126,6 +141,13 @@ id | **required** | integer | The firewall rule ID | `4153`
 
 ## Add Firewall rule
 
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+response = token.post("#{api_url}/stacks/#{stack_id}/firewalls.json", {body: {:from_ip => '123.123.123.123', :protocol => 1, :port => 80, :ttl => 20}})
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 POST /stacks/{stack_id}/firewalls HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -135,6 +157,22 @@ X-RateLimit-Remaining: 3597
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
+
+{
+  "response":
+    {
+      "id":1851,
+      "user":"test@cloud66.com",
+      "resource_type":"stack",
+      "action":"open_lease",
+      "resource_id":"1268",
+      "started_via":"api",
+      "started_at":"2015-12-08T18:01:21Z",
+      "finished_at":null,
+      "finished_success":null,
+      "finished_message":null
+    }
+}
 ```
 
 One of the from/to params must be specified.

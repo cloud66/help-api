@@ -2,6 +2,13 @@
 
 ## Environment Variable list
 
+```ruby
+id = '5999b763474b0eafa5fafb64bff0ba80'
+response = token.get("#{api_url}/#{id}/environments.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /stacks/{id}/environments HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -88,6 +95,14 @@ id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 
 ## Environment Variable
 
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+id = 4153
+response = token.get("#{api_url}/stacks/#{stack_id}/environments/#{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /stacks/{stack_id}/environments/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -130,9 +145,16 @@ Get information of a single environment variable
 Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
 stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
-id | **required** | integer | The new environment variable ID | `MY_ENVIRONMENT_VALUE`
+id | **required** | integer | The environment variable ID | `4153`
 
 ## Add Environment Variable
+
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+response = token.post("#{api_url}/stacks/#{stack_id}/environments.json", {body: {:key => 'MY_ENVIRONMENT_VALUE', :value => 'SOME_VALUE'}})
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 POST /stacks/{stack_id}/environments HTTP/1.1
@@ -181,6 +203,14 @@ value | **required** | string | The new environment variable new value | `SOME_V
 
 ## Update Environment Variable
 
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+key = 'POSTGRESQL_SLAVE_ADDRESSES'
+response = token.put("#{api_url}/stacks/#{stack_id}/environments/#{key}.json", {body: {:value => '127.0.0.1'}})
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 PUT /stacks/{stack_id}/environments/{key} HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -227,6 +257,14 @@ key | **required** | string | The environment variable key | `POSTGRESQL_SLAVE_A
 value | **required** | string | The environment variable new value | `127.0.0.1`
 
 ## Delete Environment Variable
+
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+key = 'MY_ENV_1'
+response = token.delete("#{api_url}/stacks/#{stack_id}/environments/#{key}.json)
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 DELETE /stacks/{stack_id}/environments/{key} HTTP/1.1

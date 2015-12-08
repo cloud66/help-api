@@ -2,6 +2,13 @@
 
 ## Settings list
 
+```ruby
+id = '5999b763474b0eafa5fafb64bff0ba80'
+response = token.get("#{api_url}/stacks/#{id}/settings.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /stacks/{id}/settings HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -89,6 +96,12 @@ id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 
 ## Setting
 
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+id = 'git-branch'
+response = token.get("#{api_url}/stacks/#{stack_id}/settings/#{id}.json")
+```
+
 ```http
 GET /stacks/{stack_id}/settings/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -127,8 +140,16 @@ id | **required** | string | The setting item ID | `git-branch`
 
 ## Update Setting
 
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+id = 'git-branch'
+response = token.put("#{api_url}/stacks/#{stack_id}/settings/#{id}.json", {body: {:value => 'staging'}})
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
-PUT /stacks/{stack_id}/notifications/{id} HTTP/1.1
+PUT /stacks/{stack_id}/settings/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
