@@ -140,7 +140,11 @@ id | **required** | integer | The notification ID | `1191`
 ```ruby
 stack_id = 'a6b583684833a2cf4845079c9d9350a8'
 id = 1191
-response = token.put("#{api_url}/stacks/#{stack_id}/notifications/#{id}.json", {body: {:params => "{'hipchat_room' : 'test'}"}})
+
+channels = ['email','hipchat']
+params = {:hipchat_room => 'test', :hipchat_token => 'YOUR_TOKEN'}
+
+response = token.put("#{api_url}/stacks/#{stack_id}/notifications/#{id}.json", {body: {:channels => channels, :params => params}})
 
 puts JSON.parse(response.body)['response']
 ```
@@ -154,6 +158,21 @@ X-RateLimit-Remaining: 3597
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
+
+{
+  "response":
+  {
+    "id":85,
+    "user_id":1,
+    "alert_type":"active.protect.block",
+    "channels":["email","hipchat"],
+    "stack_id":"3ee97c150d95a9dc4fc801783d18087c",
+    "params":{},
+    "created_at":"2015-11-16T18:14:04Z",
+    "updated_at":"2015-12-09T13:06:14Z"
+  }
+}
+
 ```
 
 Update `channels` or `params` of a notification

@@ -198,6 +198,30 @@ Assuming that your personal access token is `4c9c9b1111`, these are some example
 You can use the [Cloud 66 Go library repository](https://github.com/cloud66/cloud66) if you want to use Go.
 
 ## Synchronous vs. asynchronous requests
+
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+response = token.post("#{api_url}/stacks/#{stack_id}/actions.json", {body: {:command => 'clear_caches'}})
+
+#Get the action ID
+id = JSON.parse(response.body)['response']['id']
+puts "Started action with ID: #{id}"
+
+...
+
+#After sometime check status
+response = token.get("#{api_url}/stacks/#{stack_id}/actions/#{id}.json")
+
+result = JSON.parse(response.body)['response']
+
+#Check if the request finished successfully
+if result['finished_success']=='true'
+  puts 'Success!'
+else
+  puts "Failed. Error: #{result['finished_message']}"
+end
+```
+
 The Cloud 66 API uses both synchronous and asynchronous methods. Asynchronous methods are specified in the documentation for the associated calls; all others are generally considered synchronous.
 
 **Synchronous** methods will wait for the server to return a response for the request before it will continue processing. Your application will not perform any additional actions until it receives a response from the server.
