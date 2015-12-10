@@ -2,6 +2,14 @@
 
 ## Server Settings list
 
+```ruby
+stack_id = '5999b763474b0eafa5fafb64bff0ba80'
+server_id = 'f8468fc145ea49bac474b30a8fea888d'
+response = token.get("#{api_url}/stacks/#{stack_id}/servers/#{server_id}/settings.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /stacks/{stack_id}/servers/{server_id}/settings HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -52,6 +60,15 @@ server_id | **required** | string | The server UID | `f8468fc145ea49bac474b30a8f
 
 ## Server Setting
 
+```ruby
+stack_id = '5999b763474b0eafa5fafb64bff0ba80'
+server_id = 'f8468fc145ea49bac474b30a8fea888d'
+id = 'server-name'
+response = token.get("#{api_url}/stacks/#{stack_id}/servers/#{server_id}/settings/#{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET stacks/{stack_id}/servers/{server_id}/settings/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -90,6 +107,15 @@ server_id | **required** | string | The server uid | `f8468fc145ea49bac474b30a8f
 id | **required** | string | The server setting item ID | `server-name`
 
 ## Update Server Setting
+
+```ruby
+stack_id = '5999b763474b0eafa5fafb64bff0ba80'
+server_id = 'f8468fc145ea49bac474b30a8fea888d'
+id = 'server-name'
+response = token.put("#{api_url}/stacks/#{stack_id}/servers/#{server_id}/settings/#{id}.json", {body: {:value => 'newname'}})
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 PUT /stacks/{stack_id}/servers/{server_id}/settings/{id} HTTP/1.1

@@ -100,6 +100,8 @@ id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 stack_id = 'a6b583684833a2cf4845079c9d9350a8'
 id = 'git-branch'
 response = token.get("#{api_url}/stacks/#{stack_id}/settings/#{id}.json")
+
+puts JSON.parse(response.body)['response']
 ```
 
 ```http

@@ -2,6 +2,13 @@
 
 ## Servers list
 
+```ruby
+id = '5999b763474b0eafa5fafb64bff0ba80'
+response = token.get("#{api_url}/stacks/#{id}/servers.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /stacks/{id}/servers HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -90,6 +97,14 @@ Parameter | Presence | Data type | Description |  Sample value
 id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 
 ## Servers
+
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+id = 'f8468fc145ea49bac474b30a8fea888d'
+response = token.get("#{api_url}/stacks/#{stack_id}/servers/#{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 GET /stacks/{stack_id}/servers/{id} HTTP/1.1

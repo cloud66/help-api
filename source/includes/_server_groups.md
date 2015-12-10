@@ -2,6 +2,13 @@
 
 ## Server Groups list
 
+```ruby
+id = '5999b763474b0eafa5fafb64bff0ba80'
+response = token.get("#{api_url}/stacks/#{id}/server_groups.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /stacks/{id}/server_groups HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -60,6 +67,14 @@ Parameter | Presence | Data type | Description |  Sample value
 id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 
 ## Server Group
+
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+id = 128
+response = token.get("#{api_url}/stacks/#{stack_id}/server_groups/#{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 GET /stacks/{stack_id}/server_groups/{id} HTTP/1.1
