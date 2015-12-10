@@ -2,6 +2,12 @@
 
 ## Cloud list
 
+```ruby
+response = token.get("#{api_url}/clouds.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /clouds HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -319,6 +325,13 @@ Get list of all clouds of account
 `GET /clouds`
 
 ## Cloud
+
+```ruby
+cloud_id = 'digitalocean'
+response = token.get("#{api_url}/clouds/#{cloud_id}.json")
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 GET /clouds/{cloud_id} HTTP/1.1

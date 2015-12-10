@@ -2,6 +2,13 @@
 
 ## Backups list
 
+```ruby
+stack_id = '5999b763474b0eafa5fafb64bff0ba80'
+response = token.get("#{api_url}/stacks/#{stack_id}/backups.json", {body: {:db_type => 'mysql'}})
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /stacks/{id}/backups HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -80,9 +87,17 @@ Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
 id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 group | optional | integer | Backup group ID | `15`
-db_type | optional | string | Backup database type (valid options are: mysql, postgresql, redis, mongodb) | `mysql`
+db_type | optional | string | Backup database type (valid options are: `mysql`, `postgresql`, `redis`, `mongodb`) | `mysql`
 
 ## Backup
+
+```ruby
+stack_id = '5999b763474b0eafa5fafb64bff0ba80'
+id = 4153
+response = token.get("#{api_url}/stacks/#{stack_id}/backups/#{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 GET /stacks/{stack_id}/backups/{id} HTTP/1.1
@@ -137,6 +152,13 @@ id | **required** | integer | Backup ID | `4153`
 
 ## New Backup
 
+```ruby
+stack_id = '5999b763474b0eafa5fafb64bff0ba80'
+response = token.post("#{api_url}/stacks/#{stack_id}/backups.json", {body: {:db_type => 'mysql', :keep_count => 10}})
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 POST /stacks/{stack_id}/backups HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -180,6 +202,14 @@ run_on_replica_server | optional | boolean | Run backup task on replica server i
 
 ## Import Backup
 
+```ruby
+stack_id = '5999b763474b0eafa5fafb64bff0ba80'
+remote_url = 'https://s3.amazonaws.com/c66-managed-backup-non-prod/2aad2bb5a70e621ecf251fbd85af6927/backups/09a7dec0efdaa19b44148fccbf6128ec/redis/redis_23/2014.07.01.07.00.46/redis_23.tar'
+response = token.post("#{api_url}/stacks/#{stack_id}/backups.json", {body: {:db_type => 'mysql', :group => 5, :remote_url => remote_url}})
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 POST /stacks/{stack_id}/backups HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -219,6 +249,14 @@ db_type | **required** | string | Comma separated list of Database types which n
 remote_url | **required** | string | A URL to backup file to be imported | `https://s3.amazonaws.com/c66-managed-backup-non-prod/2aad2bb5a70e621ecf251fbd85af6927/backups/09a7dec0efdaa19b44148fccbf6128ec/redis/redis_23/2014.07.01.07.00.46/redis_23.tar`
 
 ## Backups files list
+
+```ruby
+stack_id = '5999b763474b0eafa5fafb64bff0ba80'
+backup_id = 4153
+response = token.get("#{api_url}/stacks/#{stack_id}/backups/#{backup_id}/files.json")
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 GET /stacks/{stack_id}/backups/{backup_id}/files HTTP/1.1
@@ -267,6 +305,15 @@ stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0
 backup_id | **required** | integer | Backup ID | `4153`
 
 ## Backup file
+
+```ruby
+stack_id = '5999b763474b0eafa5fafb64bff0ba80'
+backup_id = 4153
+id = 'tar-aa'
+response = token.get("#{api_url}/stacks/#{stack_id}/backups/#{backup_id}/files/#{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 GET /stacks/{stack_id}/backups/{backup_id}/files/{id} HTTP/1.1

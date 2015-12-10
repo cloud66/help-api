@@ -2,6 +2,12 @@
 
 ## Users list
 
+```ruby
+response = token.get("#{api_url}/users.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /users HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -95,6 +101,13 @@ Get list of users that caller has access to.
 
 ## User
 
+```ruby
+id = 1
+response = token.get("#{api_url}/users/#{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /users/{id} HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -175,6 +188,14 @@ id | **required** | integer | The user UID | `1`
 
 ## Add Device
 
+```ruby
+id = 1
+token = 'htyukjbnnmshthkr'
+response = token.post("#{api_url}/users/#{id}/devices.json", {body: {:device_type => 1, :sub_type => 1, :token => token}})
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 POST /users/{id}/devices HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -206,6 +227,10 @@ Add a new device for the user.
 <b>Scope:</b> <i>users</i>
 </aside>
 
+<aside class="warning">
+Unfortunately, a Cloud 66 app for Android is not currently available!</i>
+</aside>
+
 ### HTTP Request
 
 `POST /users/{id}/devices`
@@ -221,6 +246,14 @@ token | **required** | string | The token of the device | `htyukjbnnmshthkr`
 
 ## Update Device
 
+```ruby
+id = 1
+token = 'htyukjbnnmshthkr'
+response = token.put("#{api_url}/users/#{id}/devices.json", {body: {:device_type => 1, :sub_type => 1, :token => token}})
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 PUT /users/{id}/devices HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -232,7 +265,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 ```
 
-Update device_type/sub_type of a device
+Update `device_type` or `sub_type` of a device
 
 <aside class="notice">
 <b>Scope:</b> <i>users</i>
@@ -253,8 +286,16 @@ token | **required** | string | The token of the device | `htyukjbnnmshthkr`
 
 ## Delete Device
 
+```ruby
+id = 1
+token = 'htyukjbnnmshthkr'
+response = token.delete("#{api_url}/users/#{id}/devices/#{token}.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
-DELETE /stacks/{stack_id}/environments/{key} HTTP/1.1
+DELETE /users/{id}/devices/{token} HTTP/1.1
 X-RateLimit-Limit: 3600
 X-RateLimit-Remaining: 3597
 ```
@@ -272,7 +313,7 @@ Delete a device
 
 ### HTTP Request
 
-`DELETE /users/{id}/devices/token`
+`DELETE /users/{id}/devices/{token}`
 
 ### Query parameters
 

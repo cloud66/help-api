@@ -2,6 +2,12 @@
 
 ## Accounts list
 
+```ruby
+response = token.get("#{api_url}/accounts.json")
+
+puts JSON.parse(response.body)['response']
+```
+
 ```http
 GET /accounts HTTP/1.1
 X-RateLimit-Limit: 3600
@@ -46,6 +52,13 @@ Get a list of accounts that caller belongs to.
 `GET /accounts`
 
 ## Account
+
+```ruby
+id = 1
+response = token.get("#{api_url}/accounts/#{id}.json")
+
+puts JSON.parse(response.body)['response']
+```
 
 ```http
 GET /accounts/{id} HTTP/1.1
