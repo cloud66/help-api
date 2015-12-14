@@ -175,7 +175,7 @@ curl -X DELETE "https://app.cloud66.com/api/3/users/18/devices/wertqy.json" -H "
 
 ### Ruby
 
-This example shows how to get the first token using the Application (Client) ID and Secret. This is using `urn:ietf:wg:oauth:2.0:oob` for commandline tools.
+This example shows how to get the first token using the Application (Client) ID and Secret. This is using `urn:ietf:wg:oauth:2.0:oob` for command line tools.
 
 Once you have the code, you can apply for a token. Tokens issued by the API server do not expire and are valid until the user revokes their access. You can see how to store and retrieve the token for future use in this example.
 
@@ -191,7 +191,7 @@ You can use your **personal access token** to call the API with cURL - it just n
 You can find your <b>personal access token</b> in your Cloud 66 Accounts page, under <i>Authorized Applications</i>.
 </aside>
 
-Assuming that your personal access token is `4c9c9b1111`, these are some examples for using cURL:
+Assuming that your personal access token is `4c9c9b1111`, you can find some examples for using cURL.
 
 ### Go Example
 
@@ -200,6 +200,7 @@ You can use the [Cloud 66 Go library repository](https://github.com/cloud66/clou
 ## Synchronous vs. asynchronous requests
 
 ```ruby
+#Asynchronous example
 stack_id = 'a6b583684833a2cf4845079c9d9350a8'
 response = token.post("#{api_url}/stacks/#{stack_id}/actions.json", {body: {:command => 'clear_caches'}})
 
@@ -209,7 +210,7 @@ puts "Started action with ID: #{id}"
 
 ...
 
-#After sometime check status
+#After some time check status
 response = token.get("#{api_url}/stacks/#{stack_id}/actions/#{id}.json")
 
 result = JSON.parse(response.body)['response']
