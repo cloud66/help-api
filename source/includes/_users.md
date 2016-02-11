@@ -21,45 +21,55 @@ Content-Type: application/json
 {
   "response": [
     {
-      "id": 18,
-      "email": "test@cloud66.com",
-      "primary_account_id": 14,
-      "accounts": [
-        {
-          "account": 14,
-          "user": 18,
-          "role": "owner",
+      "id": 1,
+      "email": "jack@gmail.com",
+      "primary_account_id": 1,
+      "locked": false,
+      "access_profile": {
+        "account_profile": {
           "can_create_stack": true,
           "can_admin_users": true,
-          "default_permission_level": 60
-        }
-      ],
-      "access_rights": [
-        {
-          "user": 18,
-          "stack": "5acd43412ea412e32897c40d46f91183",
-          "access_level":
-            {
-              "code": 60,
-              "meaning":"admin"
-            }
+          "can_payment": true,
+          "can_add_cloud_key": true,
+          "can_del_cloud_key": true,
+          "can_view_acc_notifications": true,
+          "can_edit_acc_notifications": true,
+          "can_view_audit": true,
+          "can_view_docker_img_key": true,
+          "can_del_ssh_key": true,
+          "can_edit_personal_token": true,
+          "can_del_authorized_app": true,
+          "can_view_custom_env": true,
+          "can_edit_custom_env": true,
+          "can_add_developers_app": true,
+          "can_del_developers_app": true,
+          "can_edit_git_key": true,
+          "can_edit_gateway": true,
+          "default_roles": [
+            "Administrator"
+          ]
         },
-        {
-          "user": 18,
-          "stack": "8cc984959ebe28bcb75d6bd6d810767e",
-          "access_level":
-            {
-              "code": 60,
-              "meaning": "admin"
-            }
-        }],
-      "locked": false,
+        "stack_profiles": [
+          {
+            "stack_uid": "d1f1d43bb86ff3e97c9f6ff2841e42cb",
+            "role": "Administrator"
+          },
+          {
+            "stack_uid": "740f81b98eb847fab0df538ea8780d9d",
+            "role": "Administrator"
+          },
+          {
+            "stack_uid": "b5f4eaaf56b5768f272ab875d2ba48b1",
+            "role": "Administrator"
+          }
+        ]
+      },
       "uses_tfa": false,
       "timezone": "UTC",
       "has_valid_phone": false,
-      "developer_program": true,
+      "developer_program": false,
       "github_login": false,
-      "last_login": "2014-08-29T17:17:11Z",
+      "last_login": "2016-01-29T15:25:20Z",
       "devices": [
         {
           "device_type": 1,
@@ -72,20 +82,79 @@ Content-Type: application/json
           "updated_at_iso": "2014-08-04T12:03:22Z"
         }
       ],
-      "created_at": "2013-06-19T11:08:02Z",
-      "updated_at": "2014-09-01T08:11:34Z",
-      "cloud_status": "partial"
+      "created_at": "2015-08-14T19:45:28Z",
+      "updated_at": "2016-02-01T11:23:38Z",
+      "cloud_status": "healthy"
+    },
+    {
+      "id": 2,
+      "email": "jim@gmail.com",
+      "primary_account_id": 2,
+      "locked": false,
+      "access_profile": {
+        "account_profile": {
+          "can_create_stack": true,
+          "can_admin_users": false,
+          "can_payment": false,
+          "can_add_cloud_key": false,
+          "can_del_cloud_key": true,
+          "can_view_acc_notifications": false,
+          "can_edit_acc_notifications": true,
+          "can_view_audit": false,
+          "can_view_docker_img_key": false,
+          "can_del_ssh_key": false,
+          "can_edit_personal_token": false,
+          "can_del_authorized_app": false,
+          "can_view_custom_env": false,
+          "can_edit_custom_env": false,
+          "can_add_developers_app": false,
+          "can_del_developers_app": false,
+          "can_edit_git_key": false,
+          "can_edit_gateway": false,
+          "default_roles": [
+            "Viewer"
+          ]
+        },
+        "stack_profiles": [
+          {
+            "stack_uid": "740f81b98eb847fab0df538ea8780d9d",
+            "role": "Deployer"
+          },
+          {
+            "stack_uid": "b5f4eaaf56b5768f272ab875d2ba48b1",
+            "role": "Viewer"
+          },
+          {
+            "stack_uid": "740f81b98eb847fab0df538ea8780d9d",
+            "role": "Administrator"
+          },
+          {
+            "stack_uid": "b5f4eaaf56b5768f272ab875d2ba48b1",
+            "role": "Administrator"
+          }
+        ]
+      },
+      "uses_tfa": false,
+      "timezone": "UTC",
+      "has_valid_phone": false,
+      "developer_program": false,
+      "github_login": false,
+      "last_login": "2016-01-28T13:12:16Z",
+      "devices": [],
+      "created_at": "2016-01-28T13:12:13Z",
+      "updated_at": "2016-01-28T13:12:16Z",
+      "cloud_status": "healthy"
     }
   ],
-    "count":1,
-    "pagination":{
-      "previous": null,
-      "next": null,
-      "current": 1,
-      "per_page": 30,
-      "count": 1,
-      "pages": 1
-    }
+  "count": 2,
+  "pagination": {
+    "previous": null,
+    "next": null,
+    "current": 1,
+    "per_page": 30,
+    "count": 2,
+    "pages": 1
+  }
 }
 ```
 
@@ -119,54 +188,65 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "response":
-    {
-      "id": 18,
-      "email": "test@cloud66.com",
-      "primary_account_id": 14,
-      "accounts": [
+  "response": {
+    "id": 2,
+    "email": "jim@gmail.com",
+    "primary_account_id": 2,
+    "locked": false,
+    "access_profile": {
+      "account_profile": {
+        "can_create_stack": true,
+        "can_admin_users": false,
+        "can_payment": false,
+        "can_add_cloud_key": false,
+        "can_del_cloud_key": true,
+        "can_view_acc_notifications": false,
+        "can_edit_acc_notifications": true,
+        "can_view_audit": false,
+        "can_view_docker_img_key": false,
+        "can_del_ssh_key": false,
+        "can_edit_personal_token": false,
+        "can_del_authorized_app": false,
+        "can_view_custom_env": false,
+        "can_edit_custom_env": false,
+        "can_add_developers_app": false,
+        "can_del_developers_app": false,
+        "can_edit_git_key": false,
+        "can_edit_gateway": false,
+        "default_roles": [
+          "Viewer"
+        ]
+      },
+      "stack_profiles": [
         {
-          "account": 14,
-          "user": 18,
-          "role": "owner",
-          "can_create_stack":true,
-          "can_admin_users":true, "default_permission_level":60
-        }
-      ],
-      "access_rights": [
+          "stack_uid": "740f81b98eb847fab0df538ea8780d9d",
+          "role": "Deployer"
+        },
         {
-          "user": 18,
-          "stack": "5acd43412ea412e32897c40d46f91183",
-          "access_level":
-            {
-              "code": 60,
-              "meaning": "admin"
-            }
-        }
-      ],
-      "locked": false,
-      "uses_tfa": false,
-      "timezone": "UTC",
-      "has_valid_phone": false,
-      "developer_program": true,
-      "github_login": false,
-      "last_login": "2014-08-29T17:17:11Z",
-      "devices":[
+          "stack_uid": "b5f4eaaf56b5768f272ab875d2ba48b1",
+          "role": "Viewer"
+        },
         {
-          "device_type": 1,
-          "sub_type": 2,
-          "token": "wertqy",
-          "enabled": true,
-          "created_at": "2014-08-04 11:57:36 UTC",
-          "updated_at": "2014-08-04 12:03:22 UTC",
-          "created_at_iso": "2014-08-04T11:57:36Z",
-          "updated_at_iso": "2014-08-04T12:03:22Z"
+          "stack_uid": "740f81b98eb847fab0df538ea8780d9d",
+          "role": "Administrator"
+        },
+        {
+          "stack_uid": "b5f4eaaf56b5768f272ab875d2ba48b1",
+          "role": "Administrator"
         }
-      ],
-      "created_at": "2013-06-19T11:08:02Z",
-      "updated_at": "2014-09-01T08:33:43Z",
-      "cloud_status": "partial"
-    }
+      ]
+    },
+    "uses_tfa": false,
+    "timezone": "UTC",
+    "has_valid_phone": false,
+    "developer_program": false,
+    "github_login": false,
+    "last_login": "2016-01-28T13:12:16Z",
+    "devices": [],
+    "created_at": "2016-01-28T13:12:13Z",
+    "updated_at": "2016-01-28T13:12:16Z",
+    "cloud_status": "healthy"
+  }
 }
 ```
 
@@ -174,6 +254,101 @@ Get detailed information about a user.
 
 <aside class="notice">
 <b>Scope:</b> <i>users</i>
+</aside>
+
+### HTTP Request
+
+`GET /users/{id}`
+
+### Query parameters
+
+Parameter | Presence | Data type | Description |  Sample value
+--------- | ------- | ------- |----------- |  -------
+id | **required** | integer | The user UID | `1`
+
+## Update User
+
+```ruby
+id = 1
+response = token.put("#{api_url}/users/#{id}.json", {body: { payload }})
+# payload is a the same as the result of GET /user/{id}.json
+```
+
+```http
+PUT /users/{id} HTTP/1.1
+X-RateLimit-Limit: 3600
+X-RateLimit-Remaining: 3597
+```
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "id": 2,
+    "email": "jim@gmail.com",
+    "primary_account_id": 2,
+    "locked": false,
+    "access_profile": {
+      "account_profile": {
+        "can_create_stack": true,
+        "can_admin_users": false,
+        "can_payment": false,
+        "can_add_cloud_key": false,
+        "can_del_cloud_key": true,
+        "can_view_acc_notifications": false,
+        "can_edit_acc_notifications": true,
+        "can_view_audit": false,
+        "can_view_docker_img_key": false,
+        "can_del_ssh_key": false,
+        "can_edit_personal_token": false,
+        "can_del_authorized_app": false,
+        "can_view_custom_env": false,
+        "can_edit_custom_env": false,
+        "can_add_developers_app": false,
+        "can_del_developers_app": false,
+        "can_edit_git_key": false,
+        "can_edit_gateway": false,
+        "default_roles": [
+          "Viewer"
+        ]
+      },
+      "stack_profiles": [
+        {
+          "stack_uid": "740f81b98eb847fab0df538ea8780d9d",
+          "role": "Deployer"
+        },
+        {
+          "stack_uid": "b5f4eaaf56b5768f272ab875d2ba48b1",
+          "role": "Viewer"
+        },
+        {
+          "stack_uid": "740f81b98eb847fab0df538ea8780d9d",
+          "role": "Administrator"
+        },
+        {
+          "stack_uid": "b5f4eaaf56b5768f272ab875d2ba48b1",
+          "role": "Administrator"
+        }
+      ]
+    },
+    "uses_tfa": false,
+    "timezone": "UTC",
+    "has_valid_phone": false,
+    "developer_program": false,
+    "github_login": false,
+    "last_login": "2016-01-28T13:12:16Z",
+    "devices": [],
+    "created_at": "2016-01-28T13:12:13Z",
+    "updated_at": "2016-01-28T13:12:16Z",
+    "cloud_status": "healthy"
+}
+```
+
+Update user information. Currently only access profile section changes are applied.
+
+<aside class="notice">
+<b>Scope:</b> <i>admin</i>
 </aside>
 
 ### HTTP Request
