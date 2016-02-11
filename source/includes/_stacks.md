@@ -456,3 +456,58 @@ command | **required** | string | The action to perform for the stack. Valid val
 | resync_slave_db | Re-sync the specified slave database server with its master database server | <ul><li>`server`:`server-name`</li><li>`server_group`: valid values `all`, `mysql`, `postgresql`, `redis`, `mongodb`</li></ul> |
 | container_restart | Restarts a particular container on the given stack | <ul><li>`container`:`5999b763474b0eafa5fafb64bff0ba80`</li></ul> |
 | service_restart | Restarts all the containers from the given service | <ul><li>`service_name`:`web`</li><li>`server_id_filter`:`f8468fc145ea49bac474b30a8fea888d` (optional) </li></ul> |
+
+
+## Reboot the Stack
+
+```ruby
+stack_id = 'a6b583684833a2cf4845079c9d9350a8'
+response = token.post("#{api_url}/stacks/#{stack_id}/reboot_servers.json")
+
+puts JSON.parse(response.body)['response']
+```
+
+```http
+POST /stacks/{stack_id}/reboot_servers HTTP/1.1
+X-RateLimit-Limit: 3600
+X-RateLimit-Remaining: 3597
+```
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "response":
+    {
+      "id":10,
+      "user":"test@cloud66.com",
+      "resource_type":"stack",
+      "action":"stack_reboot",
+      "resource_id":"283",
+      "started_via":"api",
+      "started_at":"2016-01-01T19:08:05Z",
+      "finished_at":null,
+      "finished_success":null,
+      "finished_message":null
+    }
+}
+```
+
+You can use this method to reboot the stack or speific server group of a stack.
+
+<aside class="notice">
+<b>Scope:</b> <i>reboot</i>
+</aside>
+
+### HTTP Request
+
+`POST /stacks/{stack_id}/reboot_servers`
+
+### Query parameters
+
+Parameter | Presence | Data type | Description |  Sample value
+--------- | ------- | ------- |----------- |  -------
+stack_id | **required** | string | Unique identifier of the stack | `5999b763474b0eafa5fafb64bff0ba80`
+strategy | **required** | string | parallel or serial | `parallel`
+group | **optional** | string | all or web/db/redis etc (default is web) | `mysql`
