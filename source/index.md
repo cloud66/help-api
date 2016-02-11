@@ -28,6 +28,7 @@ includes:
   - backups
   - accounts
   - users
+  - gateway
 
 search: true
 ---
