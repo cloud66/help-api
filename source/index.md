@@ -12,6 +12,7 @@ toc_footers:
 includes:
   - cloud_vendor_instances
   - stacks
+  - processes
   - deployments
   - services
   - containers
@@ -27,6 +28,7 @@ includes:
   - backups
   - accounts
   - users
+  - gateway
 
 search: true
 ---
