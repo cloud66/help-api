@@ -176,8 +176,10 @@
 | US West (Oregon) | us-west-2 |
 | South America (Sao Paulo, Brazil) | sa-east-1 |
 | Europe (Dublin, Ireland) | eu-west-1 |
-| Asia Pacific (Singapore) | ap-southeast-1 |
+| Europe (Frankfurt) | eu-central-1 |
 | Asia Pacific (Tokyo) | ap-northeast-1 |
+| Asia Pacific (Seoul) | ap-northeast-2 |
+| Asia Pacific (Singapore) | ap-southeast-1 |
 | Asia Pacific (Sydney) | ap-southeast-2 |
 
 ## Azure
