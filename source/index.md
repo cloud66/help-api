@@ -21,6 +21,7 @@ includes:
   - firewall_rules
   - notifications
   - stack_settings
+  - jobs
   - server_groups
   - servers
   - server_settings
