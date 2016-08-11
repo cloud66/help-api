@@ -3,6 +3,10 @@
 | Instance size | Value |
 | ------------- | ------------ |
 | Micro instance | t1.micro |
+| General purpose | t2.micro |
+| General purpose | t2.small |
+| General purpose | t2.medium |
+| General purpose | t2.large |
 | General purpose | m1.small |
 | General purpose | m1.medium |
 | General purpose | m1.large |
@@ -11,6 +15,11 @@
 | General purpose | m3.large |
 | General purpose | m3.xlarge |
 | General purpose | m3.2xlarge |
+| General purpose | m4.large |
+| General purpose | m4.xlarge |
+| General purpose | m4.2xlarge |
+| General purpose | m4.4xlarge |
+| General purpose | m4.10xlarge |
 | Compute optimized | c1.medium |
 | Compute optimized | c1.xlarge |
 | Compute optimized | c3.large |
@@ -19,18 +28,33 @@
 | Compute optimized | c3.4xlarge |
 | Compute optimized | c3.8xlarge |
 | Compute optimized | cc2.8xlarge |
+| Compute optimized | c4.xlarge |
+| Compute optimized | c4.2xlarge |
+| Compute optimized | c4.4xlarge |
+| Compute optimized | (c4.8xlarge |
+| Compute optimized | (cc2.8xlarge |
 | Memory optimized | m2.xlarge |
 | Memory optimized | m2.2xlarge |
 | Memory optimized | m2.4xlarge |
+| Memory optimized | r3.large |
+| Memory optimized | r3.xlarge |
+| Memory optimized | r3.2xlarge |
+| Memory optimized | r3.4xlarge |
+| Memory optimized | r3.8xlarge |
+| Memory optimized | cr1.8xlarge |
 | Storage optimized | i2.xlarge |
 | Storage optimized | i2.2xlarge |
 | Storage optimized | i2.4xlarge |
 | Storage optimized | i2.8xlarge |
-| Memory optimized | cr1.8xlarge |
 | Storage optimized | hi1.4xlarge |
 | Storage optimized | hs1.8xlarge |
+| Storage optimized | d2.xlarge |
+| Storage optimized | d2.xlarge |
+| Storage optimized | d2.xlarge |
+| Storage optimized | d2.xlarge |
 | GPU instances | cg1.4xlarge |
 | GPU instances | g2.2xlarge |
+| GPU instances | g2.8xlarge |
 
 ## Azure
 | Instance size | Value |
@@ -45,6 +69,8 @@
 | A7 | A7 |
 | A8 | A8 |
 | A9 | A9 |
+| A10 | A10 |
+| A11 | A11 |
 | D1 | Standard_D1 |
 | D2 | Standard_D2 |
 | D3 | Standard_D3 |
@@ -53,6 +79,25 @@
 | D12 | Standard_D12 |
 | D13 | Standard_D13 |
 | D14 | Standard_D14 |
+| D1_v2 | Standard_D1_v2 |
+| D2_v2 | Standard_D2_v2 |
+| D3_v2 | Standard_D3_v2 |
+| D4_v2 | Standard_D4_v2 |
+| D5_v2 | Standard_D5_v2 |
+| D11_v2 | Standard_D11_v2 |
+| D12_v2 | Standard_D12_v2 |
+| D13_v2 | Standard_D13_v2 |
+| D14_v2 | Standard_D14_v2 |
+| F1 | Standard_F1 |
+| F2 | Standard_F2 |
+| F4 | Standard_F4 |
+| F8 | Standard_F8 |
+| F16 | Standard_F16 |
+| G1 | Standard_G1 |
+| G2 | Standard_G2 |
+| G3 | Standard_G3 |
+| G4 | Standard_G4 |
+| G5 | Standard_G5 |
 
 ## Digital Ocean
 | Instance size | Value |
@@ -75,19 +120,23 @@
 | n1-highcpu-2 | n1-highcpu-2 |
 | n1-highcpu-4 | n1-highcpu-4 |
 | n1-highcpu-8 | n1-highcpu-8 |
+| n1-highcpu-16 | n1-highcpu-16 |
+| n1-highcpu-32 | n1-highcpu-32 |
 | n1-highmem-2 | n1-highmem-2 |
 | n1-highmem-4 | n1-highmem-4 |
 | n1-highmem-8 | n1-highmem-8 |
+| n1-highmem-16 | n1-highmem-16 |
+| n1-highmem-32 | n1-highmem-32 |
 | n1-standard-1 | n1-standard-1 |
 | n1-standard-2 | n1-standard-2 |
 | n1-standard-4 | n1-standard-4 |
 | n1-standard-8 | n1-standard-8 |
 | n1-standard-16 | n1-standard-16 |
+| n1-standard-32 | n1-standard-32 |
 
 ## Linode
 | Instance size | Value |
 | ---------- | ---------- |
-| Linode 1024 | Linode 1024 |
 | Linode 2048 | Linode 2048 |
 | Linode 4096 | Linode 4096 |
 | Linode 8192 | Linode 8192 |
@@ -190,7 +239,11 @@
 | East US 2 | East US 2 |
 | North Central US | North Central US |
 | South Central US | South Central US |
+| West Central US | West Central US |
 | West US | West US |
+| West US 2 | West US 2 |
+| Canada Central | Canada Central |
+| Canada East | Canada East |
 | North Europe | North Europe |
 | West Europe | West Europe |
 | East Asia | East Asia |
@@ -218,24 +271,33 @@
 ## Google Compute Engine
 | Zone | Value |
 | ---------- | ---------- |
-| us-central1-a | us-central1-a |
-| us-central1-b | us-central1-b |
-| us-central1-f | us-central1-f |
-| europe-west1-b | europe-west1-b |
-| europe-west1-c | europe-west1-c |
-| asia-east1-a | asia-east1-a |
-| asia-east1-b | asia-east1-b |
-| asia-east1-c | asia-east1-c |
+| Eastern US (B) | us-east1-b |
+| Eastern US (C) | us-east1-c |
+| Eastern US (D) | us-east1-d |
+| Central US (A) | us-central1-a |
+| Central US (B) | us-central1-b |
+| Central US (C) | us-central1-c |
+| Central US (F) | us-central1-f |
+| Western US (A) | us-west1-a |
+| Western US (B) | us-west1-b |
+| Western Europe (B) | europe-west1-b |
+| Western Europe (C) | europe-west1-c |
+| Western Europe (D) | europe-west1-d |
+| Eastern Asia (A) | asia-east1-a |
+| Eastern Asia (B) | asia-east1-b |
+| Eastern Asia (C) | asia-east1-c |
 
 ## Linode
 | Region | Value |
 | ---------- | ---------- |
 | Atlanta, GA, USA | Atlanta, GA, USA |
 | Dallas, TX, USA | Dallas, TX, USA |
+| Frankfurt, DE | Frankfurt, DE |
 | Fremont, CA, USA | Fremont, CA, USA |
 | London, England, UK | London, England, UK |
 | Newark, NJ, USA | Newark, NJ, USA |
 | Tokyo, JP | Tokyo, JP |
+| Singapore, SG | Singapore, SG |
 
 ## Rackspace
 | Region | Value |
