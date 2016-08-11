@@ -99,6 +99,23 @@
 | G4 | Standard_G4 |
 | G5 | Standard_G5 |
 
+## CloudA Cloud
+| Instance size | Value |
+| ---------- | ---------- |
+| 512 MB - General Purpose | 512 MB |
+| 1 GB - General Purpose | 1 GB |
+| 2 GB - General Purpose | 2 GB |
+| 4 GB - General Purpose | 4 GB |
+| 8 GB - General Purpose | 8 GB |
+| 16 GB - General Purpose | 16 GB |
+| 32 GB - General Purpose | 32 GB |
+| 8 GB - High Memory | 8 GB - HM |
+| 16 GB - High Memory | 16 GB - HM |
+| 32 GB - High Memory | 32 GB - HM |
+| 4 GB - High Compute | 4 GB - HC |
+| 8 GB - High Compute | 8 GB - HC |
+| 16 GB - High Compute | 16 GB - HC |
+
 ## Digital Ocean
 | Instance size | Value |
 | --------- | --------- |
@@ -145,6 +162,13 @@
 | Linode 49152 | Linode 49152 |
 | Linode 65536 | Linode 65536 |
 | Linode 98304 | Linode 98304 |
+
+## Packet Cloud
+| Instance size | Value |
+| ---------- | ---------- |
+| Type 0 | baremetal_0 |
+| Type 1 | baremetal_1 |
+| Type 3 | baremetal_3 |
 
 ## Rackspace
 | Instance size | Value |
@@ -199,23 +223,6 @@
 | 48GB | nb.48G
 | 64GB | nb.64G |
 
-## CloudA Cloud
-| Instance size | Value |
-| ---------- | ---------- |
-| 512 MB - General Purpose | 512 MB |
-| 1 GB - General Purpose | 1 GB |
-| 2 GB - General Purpose | 2 GB |
-| 4 GB - General Purpose | 4 GB |
-| 8 GB - General Purpose | 8 GB |
-| 16 GB - General Purpose | 16 GB |
-| 32 GB - General Purpose | 32 GB |
-| 8 GB - High Memory | 8 GB - HM |
-| 16 GB - High Memory | 16 GB - HM |
-| 32 GB - High Memory | 32 GB - HM |
-| 4 GB - High Compute | 4 GB - HC |
-| 8 GB - High Compute | 8 GB - HC |
-| 16 GB - High Compute | 16 GB - HC |
-
 # Cloud vendor instance regions
 ## Amazon Web Services
 | Region | Value |
@@ -253,6 +260,11 @@
 | Brazil South | Brazil South |
 | Australia East | Australia East |
 | Australia Southeast | Australia Southeast |
+
+## CloudA Cloud
+| Region | Value |
+| ---------- | ---------- |
+| default | default |
 
 ## Digital Ocean
 | Region | Value |
@@ -299,6 +311,11 @@
 | Tokyo, JP | Tokyo, JP |
 | Singapore, SG | Singapore, SG |
 
+## Packet Cloud
+| Region | Value |
+| ---------- | ---------- |
+| Parsippany, NJ | ewr1 |
+
 ## Rackspace
 | Region | Value |
 | ---------- | ---------- |
@@ -313,8 +330,3 @@
 | Region | Value |
 | ---------- | ---------- |
 | Montreal | default |
-
-## CloudA Cloud
-| Region | Value |
-| ---------- | ---------- |
-| default | default |
