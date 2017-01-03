@@ -29,12 +29,20 @@ Content-Type: application/json
                 "name":"US East (Northern Virginia)"
              },
              {
+                "id":"us-east-2",
+                "name":"US East (Ohio)"
+             },
+             {
                 "id":"us-west-1",
                 "name":"US West (Northern California)"
              },
              {
                 "id":"us-west-2",
                 "name":"US West (Oregon)"
+             },
+             {
+                "id":"ca-central-1",
+                "name":"Canada (Central)"
              },
              {
                 "id":"sa-east-1",
@@ -49,6 +57,10 @@ Content-Type: application/json
                 "name":"Europe (Dublin, Ireland)"
              },
              {
+                "id":"eu-west-2",
+                "name":"Europe (London)"
+             },
+             {
                 "id":"ap-southeast-1",
                 "name":"Asia Pacific (Singapore)"
              },
@@ -59,6 +71,10 @@ Content-Type: application/json
              {
                 "id":"ap-southeast-2",
                 "name":"Asia Pacific (Sydney)"
+             },
+             {
+                "id":"ap-south-1",
+                "name":"Asia Pacific (Mumbai)"
              }
           ],
           "server_sizes":[
