@@ -2,15 +2,40 @@
 ## Amazon Web Services
 | Instance size | Value |
 | ------------- | ------------ |
-| Micro instance | t1.micro |
-| General purpose | t2.micro |
-| General purpose | t2.small |
-| General purpose | t2.medium |
-| General purpose | t2.large |
+| Compute optimized | c1.medium |
+| Compute optimized | c1.xlarge |
+| Compute optimized | c3.large |
+| Compute optimized | c3.xlarge |
+| Compute optimized | c3.2xlarge |
+| Compute optimized | c3.4xlarge |
+| Compute optimized | c3.8xlarge |
+| Compute optimized | c4.large |
+| Compute optimized | c4.xlarge |
+| Compute optimized | c4.2xlarge |
+| Compute optimized | c4.4xlarge |
+| Compute optimized | c4.8xlarge |
+| Compute optimized | cc2.8xlarge |
+| GPU instances | cg1.4xlarge |
+| Memory optimized | cr1.8xlarge |
+| Storage optimized | d2.xlarge |
+| Storage optimized | d2.2xlarge |
+| Storage optimized | d2.4xlarge |
+| Storage optimized | d2.8xlarge |
+| GPU instances | g2.2xlarge |
+| GPU instances | g2.8xlarge |
+| Storage optimized | hi1.4xlarge |
+| Storage optimized | hs1.8xlarge |
+| Storage optimized | i2.xlarge |
+| Storage optimized | i2.2xlarge |
+| Storage optimized | i2.4xlarge |
+| Storage optimized | i2.8xlarge |
 | General purpose | m1.small |
 | General purpose | m1.medium |
 | General purpose | m1.large |
 | General purpose | m1.xlarge |
+| Memory optimized | m2.xlarge |
+| Memory optimized | m2.2xlarge |
+| Memory optimized | m2.4xlarge |
 | General purpose | m3.medium |
 | General purpose | m3.large |
 | General purpose | m3.xlarge |
@@ -20,41 +45,18 @@
 | General purpose | m4.2xlarge |
 | General purpose | m4.4xlarge |
 | General purpose | m4.10xlarge |
-| Compute optimized | c1.medium |
-| Compute optimized | c1.xlarge |
-| Compute optimized | c3.large |
-| Compute optimized | c3.xlarge |
-| Compute optimized | c3.2xlarge |
-| Compute optimized | c3.4xlarge |
-| Compute optimized | c3.8xlarge |
-| Compute optimized | cc2.8xlarge |
-| Compute optimized | c4.xlarge |
-| Compute optimized | c4.2xlarge |
-| Compute optimized | c4.4xlarge |
-| Compute optimized | (c4.8xlarge |
-| Compute optimized | (cc2.8xlarge |
-| Memory optimized | m2.xlarge |
-| Memory optimized | m2.2xlarge |
-| Memory optimized | m2.4xlarge |
 | Memory optimized | r3.large |
 | Memory optimized | r3.xlarge |
 | Memory optimized | r3.2xlarge |
 | Memory optimized | r3.4xlarge |
 | Memory optimized | r3.8xlarge |
-| Memory optimized | cr1.8xlarge |
-| Storage optimized | i2.xlarge |
-| Storage optimized | i2.2xlarge |
-| Storage optimized | i2.4xlarge |
-| Storage optimized | i2.8xlarge |
-| Storage optimized | hi1.4xlarge |
-| Storage optimized | hs1.8xlarge |
-| Storage optimized | d2.xlarge |
-| Storage optimized | d2.xlarge |
-| Storage optimized | d2.xlarge |
-| Storage optimized | d2.xlarge |
-| GPU instances | cg1.4xlarge |
-| GPU instances | g2.2xlarge |
-| GPU instances | g2.8xlarge |
+| Micro instance | t1.micro |
+| General purpose | t2.nano |
+| General purpose | t2.micro |
+| General purpose | t2.small |
+| General purpose | t2.medium |
+| General purpose | t2.large |
+| Memory optimized | x1.32xlarge |
 
 ## Azure
 | Instance size | Value |
@@ -88,16 +90,50 @@
 | D12_v2 | Standard_D12_v2 |
 | D13_v2 | Standard_D13_v2 |
 | D14_v2 | Standard_D14_v2 |
+| D15_v2 | Standard_D15_v2 |
+| DS1 | Standard_DS1 |
+| DS2 | Standard_DS2 |
+| DS3 | Standard_DS3 |
+| DS4 | Standard_DS4 |
+| DS11 | Standard_DS11 |
+| DS12 | Standard_DS12 |
+| DS13 | Standard_DS13 |
+| DS14 | Standard_DS14 |
+| DS1_v2 | Standard_DS1_v2 |
+| DS2_v2 | Standard_DS2_v2 |
+| DS3_v2 | Standard_DS3_v2 |
+| DS4_v2 | Standard_DS4_v2 |
+| DS11_v2 | Standard_DS11_v2 |
+| DS12_v2 | Standard_DS12_v2 |
+| DS13_v2 | Standard_DS13_v2 |
+| DS14_v2 | Standard_DS14_v2 |
+| DS15_v2 | Standard_DS15_v2 |
 | F1 | Standard_F1 |
 | F2 | Standard_F2 |
 | F4 | Standard_F4 |
 | F8 | Standard_F8 |
 | F16 | Standard_F16 |
+| F1s | Standard_F1s |
+| F2s | Standard_F2s |
+| F4s | Standard_F4s |
+| F8s | Standard_F8s |
+| F16s | Standard_F16s |
 | G1 | Standard_G1 |
 | G2 | Standard_G2 |
 | G3 | Standard_G3 |
 | G4 | Standard_G4 |
 | G5 | Standard_G5 |
+| GS1 | Standard_GS1 |
+| GS2 | Standard_GS2 |
+| GS3 | Standard_GS3 |
+| GS4 | Standard_GS4 |
+| GS5 | Standard_GS5 |
+| NV6 | Standard_NV6 |
+| NV12 | Standard_NV12 |
+| NV24 | Standard_NV24 |
+| NC6 | Standard_NC6 |
+| NC12 | Standard_NC12 |
+| NC24 | Standard_NC24 |
 
 ## CloudA Cloud
 | Instance size | Value |
@@ -157,11 +193,14 @@
 | Linode 2048 | Linode 2048 |
 | Linode 4096 | Linode 4096 |
 | Linode 8192 | Linode 8192 |
+| Linode 12288 | Linode 12288 |
 | Linode 16384 | Linode 16384 |
+| Linode 24576 | Linode 24576 |
 | Linode 32768 | Linode 32768 |
 | Linode 49152 | Linode 49152 |
 | Linode 65536 | Linode 65536 |
 | Linode 98304 | Linode 98304 |
+| Linode 122880 | Linode 122880 |
 
 ## Packet Cloud
 | Instance size | Value |
@@ -228,15 +267,19 @@
 | Region | Value |
 | ---------- | ---------- |
 | US East (Northern Virginia)| us-east-1 |
+| US East (Ohio)| us-east-2 |
 | US West (Northern California) | us-west-1 |
 | US West (Oregon) | us-west-2 |
+| Canada (Central) | ca-central-1 |
 | South America (Sao Paulo, Brazil) | sa-east-1 |
 | Europe (Dublin, Ireland) | eu-west-1 |
+| Europe (London) | eu-west-2 |
 | Europe (Frankfurt) | eu-central-1 |
 | Asia Pacific (Tokyo) | ap-northeast-1 |
 | Asia Pacific (Seoul) | ap-northeast-2 |
 | Asia Pacific (Singapore) | ap-southeast-1 |
 | Asia Pacific (Sydney) | ap-southeast-2 |
+| Asia Pacific (Mumbai) | ap-south-1 |
 
 ## Azure
 | Region | Value |
