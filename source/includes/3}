@@ -1,1 +1,0 @@
-{"response":[{"md5":"179c6c658c31d3055375c42069391d5b","name":"worker","command":"bundle exec rake test:work","servers":{"Frog":1}},{"md5":"1aac8db8cd83bb7211f6f1a5b78217de","name":"scheduler","command":"bundle exec rake test:work","servers":{"Frog":1}}],"count":2,"pagination":{"previous":null,"next":null,"current":1,"per_page":30,"count":2,"pages":1}}
