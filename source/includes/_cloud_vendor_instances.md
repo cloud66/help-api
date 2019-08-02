@@ -205,9 +205,16 @@
 ## Packet Cloud
 | Instance size | Value |
 | ---------- | ---------- |
-| Type 0 | baremetal_0 |
-| Type 1 | baremetal_1 |
-| Type 3 | baremetal_3 |
+| t1.small.x86 | baremetal_0 |
+| c1.small.x86 | baremetal_1 |
+| x1.small.x86 | baremetal_1e |
+| c2.medium.x86 | c2.medium.x86 |
+| s1.large.x86 | baremetal_s |
+| c1.xlarge.x86 | baremetal_3 |
+| m1.xlarge.x86 | baremetal_2 |
+| m2.xlarge.x86 | m2.xlarge.x86 |
+| n2.xlarge.x86 | n2.xlarge.x86 |
+| x2.xlarge.x8 | x2.xlarge.x86 |
 
 ## Rackspace
 | Instance size | Value |
@@ -247,20 +254,6 @@
 | 60 GB Performance | 60 GB Performance |
 | 90 GB Performance | 90 GB Performance |
 | 120 GB Performance | 120 GB Performance |
-
-## Vexxhost Cloud
-| Instance size | Value |
-| ---------- | ---------- |
-| 512MB | nb.512M |
-| 1GB | nb.1G |
-| 2GB | nb.2G |
-| 4GB | nb.4G |
-| 8GB | nb.8G |
-| 16GB | nb.16G |
-| 24GB | nb.24G |
-| 32GB | nb.32G |
-| 48GB | nb.48G
-| 64GB | nb.64G |
 
 # Cloud vendor instance regions
 ## Amazon Web Services
@@ -357,7 +350,23 @@
 ## Packet Cloud
 | Region | Value |
 | ---------- | ---------- |
+| Amsterdam, NL | ams1 |
+| Atlanta, GA | atl1 |
+| Dallas, TX 1 | dfw1 |
+| Dallas, TX 2 | dfw2 |
 | Parsippany, NJ | ewr1 |
+| Frankfurt 2, DE | fra2 |
+| Hong Kong 1, HK | hkg1 |
+| Ashburn, VA | iad1 |
+| Los Angeles, CA | lax1 |
+| Marseille, France | mrs1 |
+| Tokyo, JP | nrt1 |
+| Chicago, IL | ord1 |
+| Seattle, WA | sea1 |
+| Singapore | sin1 |
+| Sunnyvale, CA | sjc1 |
+| Sydney, Australia | syd1 |
+| Toronto, ON, CA | yyz1 |
 
 ## Rackspace
 | Region | Value |
