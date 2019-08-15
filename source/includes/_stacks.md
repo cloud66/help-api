@@ -95,8 +95,8 @@ Retrieves a paged list of all the stack objects the user can access.
 | fqdn | string | The fully qualified namespace of the stack. | `awesome-app.dev.c66.me` |
 | language | string | The programming language of the stack. | `ruby` |
 | framework | string | The framework used for the stack. | `rails` |
-| status | int | The current status code for the stack. | `1` |
-| health | int | The current health code for the stack. | `3` |
+| status | int | The current [status code](#stack-status-values) for the stack. | `1` |
+| health | int | The current [health code](#stack-health-status-values) for the stack. | `3` |
 | last_activity | datetime | The date and time the last action was performed for the stack, in UTC datetime. | `2014-08-14T01:46:53+00:00` |
 | last_activity_iso | datetime | The date and time the last action was performed for the stack, in UTC datetime | `2014-08-14T01:46:53+00:00` |
 | maintenance mode | bool | Whether the stack currently has maintenance mode enabled. | `false` |
