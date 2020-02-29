@@ -197,7 +197,7 @@ Parameter | Presence | Data type | Description |  Sample value
 --------- | ------- | ------- |----------- |  -------
 stack_id | **required** | string | The stack UID | `5999b763474b0eafa5fafb64bff0ba80`
 git_ref | optional | string | Git reference (branch, tag or hash). Non-docker only. | `a_git_tag_or_hash`
-services_filter | optional | string | Services from your stack to deploy only. Docker only. | `service1,service2`
+services | optional | string | Filter deployment to only include named services. Docker only. | `service1,service2`
 
 ## Cancel deployment
 
